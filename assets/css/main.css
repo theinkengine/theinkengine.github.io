@@ -1788,6 +1788,7 @@ input, select, textarea {
 		.image img {
 			display: block;
 			width: 100%;
+			height: auto;
 		}
 
 		.image.fit {
@@ -2485,6 +2486,10 @@ input, select, textarea {
 		}
 
 		#footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
+			color: #fff;
+		}
+
+		#footer strong, #footer b {
 			color: #fff;
 		}
 
