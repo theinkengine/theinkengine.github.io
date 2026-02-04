@@ -214,4 +214,53 @@
 
 		});
 
+	// Lightbox.
+		$body.append('<div id="lightbox"><span class="close">&times;</span><img class="lightbox-content" id="lightbox-img"><a class="prev">&#10094;</a><a class="next">&#10095;</a></div>');
+		var $lightbox = $('#lightbox');
+		var $lightboxImg = $('#lightbox-img');
+		var $lightboxLinks = $('.lightbox');
+		var currentIndex = 0;
+
+		function showImage(index) {
+			if (index >= $lightboxLinks.length) { currentIndex = 0; }
+			else if (index < 0) { currentIndex = $lightboxLinks.length - 1; }
+			else { currentIndex = index; }
+			var src = $lightboxLinks.eq(currentIndex).attr('href');
+			$lightboxImg.attr('src', src);
+		}
+
+		$lightboxLinks.on('click', function(e) {
+			e.preventDefault();
+			currentIndex = $lightboxLinks.index(this);
+			showImage(currentIndex);
+			$lightbox.fadeIn();
+		});
+
+		$('.close').on('click', function() {
+			$lightbox.fadeOut();
+		});
+
+		$lightbox.find('.prev').on('click', function(e) {
+			e.stopPropagation();
+			showImage(currentIndex - 1);
+		});
+
+		$lightbox.find('.next').on('click', function(e) {
+			e.stopPropagation();
+			showImage(currentIndex + 1);
+		});
+
+		$lightbox.on('click', function(e) {
+			if (e.target !== $lightboxImg[0]) {
+				$lightbox.fadeOut();
+			}
+		});
+
+		$window.on('keydown', function(e) {
+			if (e.keyCode == 27) {
+				if ($lightbox.is(':visible'))
+					$lightbox.fadeOut();
+			}
+		});
+
 })(jQuery);

@@ -2096,6 +2096,16 @@ input, select, textarea {
 				background: #3B353C;
 			}
 
+	.button.circled {
+		border-radius: 100%;
+		width: 4.5em;
+		height: 4.5em;
+		line-height: 4.5em;
+		text-align: center;
+		font-size: 1.25em;
+		padding: 0;
+	}
+
 /* Post */
 
 	.post.stub {
@@ -3135,4 +3145,124 @@ input, select, textarea {
 						margin-bottom: 2em;
 					}
 
+	}
+
+/* Lightbox */
+
+	#lightbox {
+		display: none;
+		position: fixed;
+		z-index: 20000;
+		padding-top: 50px;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0,0,0,0.9);
+		text-align: center;
+	}
+
+	@keyframes zoom {
+		from {transform:scale(0)}
+		to {transform:scale(1)}
+	}
+
+	#lightbox img {
+		margin: auto;
+		display: block;
+		max-width: 90%;
+		max-height: 90%;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+	}
+
+	#lightbox .close {
+		position: absolute;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 40px;
+		font-weight: bold;
+		transition: 0.3s;
+		cursor: pointer;
+	}
+
+	#lightbox .close:hover,
+	#lightbox .close:focus {
+		color: #bbb;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+/* Lightbox Hover Effect */
+
+	.image.lightbox {
+		position: relative;
+	}
+
+	.image.lightbox:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(43, 37, 44, 0.5);
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+		z-index: 1;
+	}
+
+	.image.lightbox:after {
+		content: '\f00e'; /* fa-search-plus */
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 900;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 3em;
+		color: #fff;
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+		z-index: 2;
+	}
+
+	.image.lightbox:hover:before,
+	.image.lightbox:hover:after {
+		opacity: 1;
+	}
+
+/* Lightbox Navigation */
+
+	#lightbox .prev,
+	#lightbox .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		padding: 16px;
+		margin-top: -50px;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+	}
+
+	#lightbox .next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	#lightbox .prev {
+		left: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	#lightbox .prev:hover,
+	#lightbox .next:hover {
+		background-color: rgba(0,0,0,0.8);
 	}

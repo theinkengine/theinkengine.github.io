@@ -18,6 +18,7 @@ yarn-error.log*
 .cache/
 dist/
 build/
+*.kra
 
 # Dependencias (si llegas a usar Sass o herramientas de node)
 node_modules/
