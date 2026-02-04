@@ -2869,6 +2869,12 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			.button.circled {
+				display: inline-block;
+				width: 4.5em;
+				line-height: 4.5em;
+			}
+
 		/* Nav */
 
 			#page-wrapper {
