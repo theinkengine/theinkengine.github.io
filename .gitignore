@@ -5,27 +5,25 @@ desktop.ini
 
 # Carpetas de editores (VS Code, Sublime, etc.)
 .vscode/
+!.vscode/extensions.json
 .idea/
 *.sublime-project
 *.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Logs de error
+# Logs y Archivos temporales
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Archivos temporales o de caché
-.cache/
-dist/
-build/
-*.kra
-
-# Dependencias (si llegas a usar Sass o herramientas de node)
-node_modules/
+logs
+*.log
+# *.py  <-- Comentado por seguridad, descomentar si realmente son logs
 
 # --- SEGURIDAD Y SECRETOS ---
-# Bloquea archivos que contienen tus API Keys (como la de Gemini), 
-# contraseñas de bases de datos y configuraciones privadas.
 .env
 *.env
 .env.local
@@ -34,30 +32,11 @@ node_modules/
 .env.production.local
 
 # --- DEPENDENCIAS ---
-# No necesitas subir las librerías, se reinstalan con 'npm install'.
 node_modules/
 jspm_packages/
 web_modules/
 
-# --- ARCHIVOS DE VS CODE / IDEs ---
-# Evita subir tu configuración personal del editor.
-.vscode/*
-!.vscode/extensions.json
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# --- ARCHIVOS DE SISTEMA ---
-# Archivos basura que generan Windows y Mac.
-.DS_Store
-Thumbs.db
-desktop.ini
-
 # --- COMPILACIÓN Y CACHÉ ---
-# Carpetas de salida (si usas React, Next.js, Astro, etc.)
 dist/
 build/
 .cache/
@@ -66,11 +45,6 @@ out/
 bin/
 obj/
 
-# --- LOGS ---
-# Registros de errores que solo ocupan espacio.
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-logs
-*.log
-*.py
+# --- ARTE Y DISEÑO ---
+*.kra
+*.psd
