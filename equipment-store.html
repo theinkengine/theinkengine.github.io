@@ -68,7 +68,11 @@
 										Detailed condition photos available in the gallery below.</p>
 								</header>
 
-								<div class="row gtr-50" style="margin-bottom: 2em;">
+								<figure class="sale-hero-image">
+									<img src="images/store/ventas.png" alt="Huion Kamvas Pro 16 Plus and Inspiroy KD200" />
+								</figure>
+
+								<div class="row gtr-50 equipment-details" style="margin-bottom: 2em;">
 									<!-- HUION KAMVAS PRO 16 PLUS -->
 									<div class="col-6 col-12-mobile">
 										<div style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 8px; color: #333;">
@@ -133,20 +137,36 @@
 									</div>
 								</div>
 
-								<!-- Gallery Link Section -->
-								<div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.3); text-align: center;">
-									<h4 style="color: white; margin-top: 0;">🖼️ Detailed Photos Gallery</h4>
-									<p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5em;">
-										View high-resolution photos showing every detail and condition of both tablets.
-									</p>
-									<a href="https://drive.google.com/drive/folders/17LXpvnUzgK_-gtK5BGwA7Yx6-BTx76jZ?usp=sharing" 
-									   target="_blank" 
-									   style="display: inline-block; background: white; color: #df7366; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.3s;">
-										📸 Open Photo Gallery on Google Drive
-									</a>
-									<p style="color: rgba(255,255,255,0.8); font-size: 0.9em; margin-top: 1em;">
-										All photos show the actual equipment in pristine condition.
-									</p>
+								<!-- Local equipment photo carousel -->
+								<div class="equipment-gallery" aria-label="Equipment photo gallery">
+									<div class="equipment-gallery-heading">
+										<div>
+											<h4>🖼️ Detailed Photos Gallery</h4>
+											<p>Browse the actual equipment photos and click any image to view it larger.</p>
+										</div>
+										<a href="https://drive.google.com/drive/folders/17LXpvnUzgK_-gtK5BGwA7Yx6-BTx76jZ?usp=sharing" target="_blank" rel="noopener">More photos on Google Drive</a>
+									</div>
+									<div class="equipment-gallery-stage">
+										<button class="gallery-arrow gallery-prev" type="button" aria-label="Previous photo">&#10094;</button>
+										<a class="gallery-featured lightbox" href="images/store/ventas.png">
+											<img src="images/store/ventas.png" alt="Huion Kamvas Pro 16 Plus and KD200 equipment" />
+										</a>
+										<button class="gallery-arrow gallery-next" type="button" aria-label="Next photo">&#10095;</button>
+									</div>
+									<div class="gallery-thumbnails" role="list" aria-label="Photo thumbnails">
+										<a class="gallery-thumb lightbox is-active" role="listitem" href="images/store/ventas.png" data-full="images/store/ventas.png"><img src="images/store/ventas.png" alt="Huion Kamvas Pro 16 Plus and KD200 equipment" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_004.jpg" data-full="images/store/20260824_004.jpg"><img src="images/store/20260824_004.jpg" alt="Huion equipment, photo 2" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_006.jpg" data-full="images/store/20260824_006.jpg"><img src="images/store/20260824_006.jpg" alt="Huion equipment, photo 3" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_007.jpg" data-full="images/store/20260824_007.jpg"><img src="images/store/20260824_007.jpg" alt="Huion equipment, photo 4" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_008.jpg" data-full="images/store/20260824_008.jpg"><img src="images/store/20260824_008.jpg" alt="Huion equipment, photo 5" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_009.jpg" data-full="images/store/20260824_009.jpg"><img src="images/store/20260824_009.jpg" alt="Huion equipment, photo 6" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_011.jpg" data-full="images/store/20260824_011.jpg"><img src="images/store/20260824_011.jpg" alt="Huion equipment, photo 7" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_013.jpg" data-full="images/store/20260824_013.jpg"><img src="images/store/20260824_013.jpg" alt="Huion equipment, photo 8" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_014.jpg" data-full="images/store/20260824_014.jpg"><img src="images/store/20260824_014.jpg" alt="Huion equipment, photo 9" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_015.jpg" data-full="images/store/20260824_015.jpg"><img src="images/store/20260824_015.jpg" alt="Huion equipment, photo 10" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_016.jpg" data-full="images/store/20260824_016.jpg"><img src="images/store/20260824_016.jpg" alt="Huion equipment, photo 11" /></a>
+										<a class="gallery-thumb lightbox" role="listitem" href="images/store/20260824_018.jpg" data-full="images/store/20260824_018.jpg"><img src="images/store/20260824_018.jpg" alt="Huion equipment, photo 12" /></a>
+									</div>
 								</div>
 
 								<div style="text-align: center; margin-top: 2em;">
@@ -192,6 +212,35 @@
 		</div>
 
 		<!-- Scripts -->
+			<script>
+				(function() {
+					var gallery = document.querySelector('.equipment-gallery');
+					if (!gallery) return;
+					var featured = gallery.querySelector('.gallery-featured');
+					var featuredImage = featured.querySelector('img');
+					var thumbnails = Array.prototype.slice.call(gallery.querySelectorAll('.gallery-thumb'));
+					var currentIndex = 0;
+
+					function showPhoto(index) {
+						currentIndex = (index + thumbnails.length) % thumbnails.length;
+						var thumbnail = thumbnails[currentIndex];
+						var image = thumbnail.querySelector('img');
+						featured.href = thumbnail.dataset.full;
+						featuredImage.src = thumbnail.dataset.full;
+						featuredImage.alt = image.alt;
+						thumbnails.forEach(function(item, itemIndex) {
+							item.classList.toggle('is-active', itemIndex === currentIndex);
+						});
+						thumbnail.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+					}
+
+					thumbnails.forEach(function(thumbnail, index) {
+						thumbnail.addEventListener('click', function() { showPhoto(index); });
+					});
+					gallery.querySelector('.gallery-prev').addEventListener('click', function() { showPhoto(currentIndex - 1); });
+					gallery.querySelector('.gallery-next').addEventListener('click', function() { showPhoto(currentIndex + 1); });
+				})();
+			</script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
