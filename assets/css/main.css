@@ -2635,6 +2635,15 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 736px) {
+			.sale-section {
+				padding: 1.5em !important;
+			}
+
+			.equipment-details p,
+			.equipment-details li {
+				text-align: left;
+			}
+
 			.equipment-gallery {
 				padding: 1em;
 			}
