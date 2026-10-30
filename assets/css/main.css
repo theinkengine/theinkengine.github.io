@@ -3457,3 +3457,72 @@ input, select, textarea {
 	#lightbox .next:hover {
 		background-color: rgba(0,0,0,0.8);
 	}
+/* --- The Ink Engine Custom Art Direction (Inspired by Sketch Inspired) --- */
+:root {
+	--paper: #F3F1EC;
+	--paper-2: #E9E5DC;
+	--ink: #2B252C;
+	--ink-soft: #5B5B5B;
+	--plum: #483949;
+	--gold: #B48F50;
+	--gold-deep: #8C6B36;
+	--mist: #DFE0E1;
+}
+
+body.homepage, body.no-sidebar, body.left-sidebar, body.right-sidebar {
+	background-color: var(--paper) !important;
+	color: var(--ink-soft);
+}
+
+#header {
+	background-color: var(--paper) !important;
+	border-bottom: 1px solid var(--mist);
+}
+
+#header h1 a, #header nav a {
+	color: var(--plum) !important;
+	letter-spacing: 0.12em;
+}
+
+#banner {
+	background-color: var(--paper-2) !important;
+	border-top: 1px solid var(--mist);
+	border-bottom: 1px solid var(--mist);
+}
+
+#banner h2, #banner p, .wrapper h2, .wrapper h3 {
+	color: var(--plum) !important;
+	font-family: "Cormorant Garamond", Georgia, serif;
+	letter-spacing: 0.04em;
+}
+
+.carousel {
+	background-color: var(--paper) !important;
+	border-bottom: 1px solid var(--mist);
+}
+
+.button {
+	background-color: transparent !important;
+	border: 1px solid var(--gold) !important;
+	color: var(--gold-deep) !important;
+	border-radius: 0px !important;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	transition: all 0.3s ease;
+}
+
+.button:hover {
+	background-color: var(--gold) !important;
+	color: #FFFFFF !important;
+}
+
+#footer {
+	background-color: var(--paper-2) !important;
+	color: var(--ink) !important;
+	border-top: 1px solid var(--mist);
+}
+
+#footer a {
+	color: var(--plum) !important;
+}
