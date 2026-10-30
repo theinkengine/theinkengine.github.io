@@ -1,0 +1,33 @@
+/* Language switcher toggle */
+.lang-switcher {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin-left: clamp(1rem, 2vw, 2.5rem);
+	font-family: var(--font-body);
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+}
+
+.lang-switcher button {
+	background: transparent;
+	border: none;
+	padding: 0.2rem 0.4rem;
+	color: var(--ink-soft);
+	cursor: pointer;
+	font: inherit;
+	min-height: auto;
+	transition: color 0.2s ease;
+}
+
+.lang-switcher button:hover,
+.lang-switcher button.active {
+	color: var(--gold-text);
+	font-weight: 600;
+}
+
+.lang-switcher span {
+	opacity: 0.35;
+}

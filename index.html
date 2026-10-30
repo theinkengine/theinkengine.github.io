@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
 		<link rel="stylesheet" href="assets/css/site.css" />
 		<link rel="stylesheet" href="assets/css/classes.css" />
+		<link rel="stylesheet" href="assets/css/lang.css" />
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV3L4K3BGD"></script>
 		<script>
@@ -31,13 +32,13 @@
 			<div class="site-head__inner wrap">
 				<a class="brand" href="index.html">The Ink Engine</a>
 				<nav class="site-nav" aria-label="Principal">
-					<a href="#work">Obra</a>
-					<a href="#selected">Galería</a>
-					<a href="#series">Series</a>
-					<a href="#hybrid">Híbrido</a>
-					<a href="#classes">Clases</a>
-					<a href="#commissions">Encargos</a>
-					<a href="#contact">Contacto</a>
+					<a href="#work" data-i18n="nav_work">Obra</a>
+					<a href="#selected" data-i18n="nav_gallery">Galería</a>
+					<a href="#series" data-i18n="nav_series">Series</a>
+					<a href="#hybrid" data-i18n="nav_hybrid">Híbrido</a>
+					<a href="#classes" data-i18n="nav_classes">Clases</a>
+					<a href="#commissions" data-i18n="nav_commissions">Encargos</a>
+					<a href="#contact" data-i18n="nav_contact">Contacto</a>
 				</nav>
 			</div>
 		</header>
@@ -417,6 +418,7 @@
 
 		<script src="assets/js/works-data.js"></script>
 		<script src="assets/js/works.js"></script>
+		<script src="assets/js/lang.js"></script>
 
 		<script type="module">
 			const head = document.querySelector(".site-head");

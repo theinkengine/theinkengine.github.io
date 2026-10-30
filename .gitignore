@@ -23,13 +23,29 @@ logs
 *.log
 # *.py  <-- Comentado por seguridad, descomentar si realmente son logs
 
-# --- SEGURIDAD Y SECRETOS ---
+# --- PYTHON Y CREDENCIALES (BLOQUEO DE SEGURIDAD) ---
+*.py
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.venv/
+venv/
+env/
 .env
 *.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa*
+id_ed25519*
+.aws/
+.secrets
+secrets/
+
 
 # --- DEPENDENCIAS ---
 node_modules/
