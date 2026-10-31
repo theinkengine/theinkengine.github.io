@@ -1,7 +1,7 @@
 # The Ink Engine — índice operativo del sitio
 
 > Leer este archivo primero. Abrir después solo el archivo o la sección citada.
-> Última actualización: 2026-10-29 · Rama: `dev` · Sin commit ni deploy.
+> Última actualización: 2026-10-30 · Rama: `dev` · Bilingüe ES/EN funcionando en local y HTTP.
 
 ## 1. Repo y estado
 
@@ -17,7 +17,7 @@
 |---|---|
 | `index.html` | Landing completa (obra, galería, series, clases, encargos, contacto) |
 | `programa.html` | Temario breve de 9 clases, enlazado desde Classes y CTA |
-- No hay commit en `dev`. No commitear sin pedido explícito.
+- Sistema bilingüe: `translations.json` (fuente) + `translations.js` (`window.INK_TRANSLATIONS`, permite `file://`) + `lang.js` (aplica `data-i18n`, `data-i18n-aria-label`, `data-i18n-content`; guarda `ink_lang` en localStorage).
 
 ## 2. Mapa de `index.html`
 
@@ -48,13 +48,16 @@
 - Clases clave: `.site-head`, `.hero`, `.split`, `.split--reverse`, `.split__media--wide`, `.works-grid`, `.works-lightbox`, `.series-stack`, `.feature`, `.palette`, `.banner`, `.newsletter`, `.contact`.
 - Página de programa: `.page-main`, `.page-intro`, `.programme`, `.syllabus`, `.lesson`, `.lesson__num`, `.lesson__outcome`.
 - Breakpoints principales: 599, 720, 900, 1100 px.
-- `assets/css/main.css` es legado Helios y ya no se usa en `index.html`.
+- `assets/css/lang.css`: switcher ES/EN (texto + hairline, activo en oro) y overrides de tema claro.
+- Assets legados Helios eliminados (`main.css`, `noscript.css`, `fontawesome`, `sass/`, `webfonts/`, `jquery*`, `main.js`, `util.js`, `breakpoints.min.js`, `browser.min.js`).
 
 ## 4. JavaScript
 
 - `assets/js/works-data.js`: array `window.WORKS` (20 obras) con `src`, `w`, `h`, `year`, `title`, `alt`, `source`.
 - `assets/js/works.js`: construye `#works-grid`, gestiona `#works-lightbox` (prev/next/close/teclado) y usa variantes `-480/-960/-1440.webp` + `-960.jpg`.
-- Script inline en `index.html`: header con scroll, año, reveal con `IntersectionObserver`, pausa del vídeo con `prefers-reduced-motion`, formulario de newsletter.
+- `assets/data/translations.json` / `translations.js`: diccionarios es/en (224 claves por idioma, paridad exacta).
+- `assets/js/lang.js`: aplica idioma guardado, traduce texto (`innerHTML`), placeholders, `aria-label` y `meta[content]`; expone `window.INK_CURRENT_DICT` para el script inline.
+- Script inline en `index.html`: header con scroll, año, reveal con `IntersectionObserver`, pausa del vídeo con `prefers-reduced-motion`, formulario de newsletter (mensajes y mailto traducidos vía `INK_CURRENT_DICT`).
 
 ## 5. Medios
 
@@ -113,10 +116,8 @@ Base: `C:\Users\Leo\.config\opencode\knowledge`
 
 1. Sustituir las imágenes de la tabla anterior y regenerar derivados.
 2. Actualizar dimensiones reales en `works-data.js`.
-3. Revisar `_preview-home-*.png` (~4 MB) y no commitearlos.
-4. Decidir si se borran assets legados (`main.css`, `assets/sass/`, `jquery*.js`, `webfonts/`).
-5. Añadir `sitemap.xml` y `robots.txt`.
-6. Commit + push a `dev`; purgar caché de Cloudflare al desplegar.
+3. Purgar caché de Cloudflare al desplegar.
+4. Strings generados por `works.js` (aria del lightbox y meta de obra) siguen en inglés fijo; opcional localizarlos si se re-renderiza la galería al cambiar idioma.
 
 ## 8. QA y entorno (Windows)
 
@@ -130,5 +131,7 @@ Base: `C:\Users\Leo\.config\opencode\knowledge`
 ## 9. Archivos retirados
 
 `gallery-01..05.html`, `left-sidebar.html`, `right-sidebar.html`, `no-sidebar.html`, `gallery-recent.html`, `clases.html`, `equipment-store.html`, `images/store/`.
+
+Assets Helios: `assets/css/main.css`, `noscript.css`, `fontawesome-all.min.css`, `assets/css/images/`, `assets/sass/`, `assets/webfonts/`, `assets/js/jquery*.js`, `main.js`, `util.js`, `breakpoints.min.js`, `browser.min.js`, `_preview-home-*.png`.
 
 El contenido de las series se consolidó en `index.html`; el de clases, en `programa.html`.

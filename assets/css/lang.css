@@ -1,33 +1,78 @@
-/* Language switcher toggle */
+/* The Ink Engine - language switcher */
+
 .lang-switcher {
 	display: inline-flex;
 	align-items: center;
-	gap: 0.35rem;
-	margin-left: clamp(1rem, 2vw, 2.5rem);
+	gap: 0.55rem;
 	font-family: var(--font-body);
-	font-size: 0.72rem;
-	letter-spacing: 0.18em;
+	font-size: 0.66rem;
+	font-weight: 400;
+	letter-spacing: 0.24em;
 	text-transform: uppercase;
 	color: var(--ink-soft);
 }
 
+.lang-switcher__sep {
+	flex: 0 0 auto;
+	width: 1px;
+	height: 0.7em;
+	background: currentColor;
+	opacity: 0.28;
+}
+
 .lang-switcher button {
 	background: transparent;
-	border: none;
-	padding: 0.2rem 0.4rem;
-	color: var(--ink-soft);
+	border: 0;
+	border-radius: 0;
+	padding: 0.35rem 0.2rem;
+	color: inherit;
 	cursor: pointer;
 	font: inherit;
 	min-height: auto;
-	transition: color 0.2s ease;
+	letter-spacing: inherit;
+	text-transform: inherit;
+	transition: color 0.35s ease;
 }
 
-.lang-switcher button:hover,
-.lang-switcher button.active {
+.lang-switcher button:hover {
+	background: transparent;
+	color: var(--ink);
+}
+
+.lang-switcher button[aria-pressed="true"] {
 	color: var(--gold-text);
-	font-weight: 600;
+	box-shadow: inset 0 -1px 0 0 var(--gold-text);
 }
 
-.lang-switcher span {
-	opacity: 0.35;
+body.has-hero .site-head .lang-switcher {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+body.has-hero .site-head .lang-switcher button:hover {
+	color: #fff;
+}
+
+body.has-hero .site-head .lang-switcher button[aria-pressed="true"] {
+	color: var(--gold);
+	box-shadow: inset 0 -1px 0 0 var(--gold);
+}
+
+body.has-hero .site-head[data-scrolled="true"] .lang-switcher {
+	color: var(--ink-soft);
+}
+
+body.has-hero .site-head[data-scrolled="true"] .lang-switcher button[aria-pressed="true"] {
+	color: var(--gold-text);
+	box-shadow: inset 0 -1px 0 0 var(--gold-text);
+}
+
+@media (max-width: 599px) {
+	.lang-switcher {
+		font-size: 0.62rem;
+		letter-spacing: 0.18em;
+	}
+
+	.lang-switcher button {
+		padding: 0.25rem 0.15rem;
+	}
 }

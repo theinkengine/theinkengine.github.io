@@ -2,13 +2,13 @@
 <html lang="es">
 	<head>
 		<script>document.documentElement.classList.add("js");</script>
-		<title>El Programa — Dibujar Hierro y Agua | The Ink Engine</title>
+		<title data-i18n="prog_title">El Programa — Dibujar Hierro y Agua | The Ink Engine</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Un programa paso a paso en perspectiva, valor, color, textura y tinta para dibujar máquinas, puertos y hierro en acuarela." />
+		<meta name="description" data-i18n-content="prog_description" content="Un programa paso a paso en perspectiva, valor, color, textura y tinta para dibujar máquinas, puertos y hierro en acuarela." />
 		<link rel="canonical" href="https://theinkengine.art/programa.html" />
-		<meta property="og:title" content="El Programa — Dibujar Hierro y Agua" />
-		<meta property="og:description" content="Nueve sesiones desde el primer encuadre en perspectiva hasta la lámina final." />
+		<meta property="og:title" data-i18n-content="prog_og_title" content="El Programa — Dibujar Hierro y Agua" />
+		<meta property="og:description" data-i18n-content="prog_og_description" content="Nueve sesiones desde el primer encuadre en perspectiva hasta la lámina final." />
 		<meta property="og:image" content="images/works/work-02-960.jpg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,12 +25,12 @@
 		</script>
 	</head>
 	<body id="top">
-		<a class="skip" href="#main">Saltar al contenido</a>
+		<a class="skip" href="#main" data-i18n="skip_link">Saltar al contenido</a>
 
 		<header class="site-head" data-scrolled="false">
 			<div class="site-head__inner wrap">
 				<a class="brand" href="index.html">The Ink Engine</a>
-				<nav class="site-nav" aria-label="Principal">
+				<nav class="site-nav" aria-label="Principal" data-i18n-aria-label="nav_aria">
 					<a href="index.html#work" data-i18n="nav_work">Obra</a>
 					<a href="index.html#selected" data-i18n="nav_gallery">Galería</a>
 					<a href="index.html#series" data-i18n="nav_series">Series</a>
@@ -38,6 +38,11 @@
 					<a href="programa.html" aria-current="page" data-i18n="nav_classes">Clases</a>
 					<a href="index.html#commissions" data-i18n="nav_commissions">Encargos</a>
 					<a href="index.html#contact" data-i18n="nav_contact">Contacto</a>
+					<div class="lang-switcher" role="group" aria-label="Idioma / Language">
+						<button type="button" data-lang="es" aria-pressed="true">ES</button>
+						<span class="lang-switcher__sep" aria-hidden="true"></span>
+						<button type="button" data-lang="en" aria-pressed="false">EN</button>
+					</div>
 				</nav>
 			</div>
 		</header>
@@ -239,6 +244,7 @@
 			</div>
 		</footer>
 
+		<script src="assets/data/translations.js"></script>
 		<script src="assets/js/lang.js"></script>
 			const head = document.querySelector(".site-head");
 			const year = document.getElementById("year");
