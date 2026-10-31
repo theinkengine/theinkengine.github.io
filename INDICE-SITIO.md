@@ -18,6 +18,7 @@
 | `index.html` | Landing completa (obra, galería, series, clases, encargos, contacto) |
 | `programa.html` | Temario breve de 9 clases, enlazado desde Classes y CTA |
 - Sistema bilingüe: `translations.json` (fuente) + `translations.js` (`window.INK_TRANSLATIONS`, permite `file://`) + `lang.js` (aplica `data-i18n`, `data-i18n-aria-label`, `data-i18n-content`; guarda `ink_lang` en localStorage).
+- Cache-busting: `lang.css`, `translations.js` y `lang.js` se referencian con `?v=YYYYMMDDx` en ambas páginas. **Subir la versión al editarlos** (Cloudflare cachea assets y sirvió un `lang.js` viejo que no enlazaba el switcher estático).
 
 ## 2. Mapa de `index.html`
 
