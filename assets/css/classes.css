@@ -37,6 +37,35 @@
 	color: var(--ink-soft);
 }
 
+.classes-sketch {
+	display: grid;
+	gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.classes-media--sketch img {
+	background: var(--ink);
+}
+
+.classes-note {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.classes-note .eyebrow {
+	margin-bottom: 0.9rem;
+}
+
+.classes-note h3 {
+	font-size: var(--step-1);
+	margin: 0 0 1rem;
+	color: var(--ink);
+}
+
+.classes-note p {
+	color: var(--ink-soft);
+	line-height: 1.8;
+}
+
 .classes-editorial-prose {
 	max-width: 800px;
 	margin: 0 auto;
