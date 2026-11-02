@@ -111,7 +111,7 @@ window.INK_TRANSLATIONS = {
 		"banner_caption": "Estudio y atmósfera · Acuarela y tinta sobre papel",
 		"contact_eyebrow": "Contacto",
 		"contact_title": "Escribe al estudio.",
-		"contact_p": "Basta con un mensaje breve. Contame qué obra te llamó la atención o cuál te gustaría ver colgada en tu pared.",
+		"contact_p": "Basta con un mensaje breve. Contame qué obra te llamó la atención o cuál te gustaría que acompañe tus días.",
 		"footer_p": "Obra original y ediciones firmadas de diez ejemplares. Sigue el trabajo diario — papel húmedo, errores y alguna que otra buena línea.",
 		"construction": "Sitio web en construcción",
 		"design": "Diseño: The Ink Engine",
