@@ -1,0 +1,242 @@
+/* The Ink Engine — Diario / Journal
+   Editorial index and single-entry reading layout. Reuses site tokens. */
+
+.blog-main {
+	padding-bottom: var(--section-y);
+}
+
+.blog-cover {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 74svh;
+	padding: clamp(9rem, 18vh, 13rem) var(--gutter) clamp(4rem, 8vh, 6rem);
+	overflow: hidden;
+	background: var(--charcoal-2);
+	color: #fff;
+	text-align: center;
+}
+
+.blog-cover picture {
+	position: absolute;
+	inset: 0;
+	display: block;
+}
+
+.blog-cover__media {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.blog-cover__veil {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(10, 10, 12, 0.66) 0%, rgba(10, 10, 12, 0.3) 44%, rgba(10, 10, 12, 0.82) 100%);
+}
+
+.blog-cover__content {
+	position: relative;
+	max-width: 60ch;
+}
+
+.blog-cover .eyebrow {
+	color: var(--gold);
+}
+
+.blog-cover h1 {
+	margin-bottom: 1.2rem;
+	font-size: var(--step-4);
+}
+
+.blog-cover .lede {
+	max-width: 46ch;
+	margin-inline: auto;
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.blog-index {
+	padding-top: var(--section-y);
+	padding-bottom: var(--section-y);
+}
+
+.blog-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: clamp(3rem, 7vw, 5rem) var(--grid-gap);
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+@media (min-width: 820px) {
+	.blog-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.blog-grid--single {
+		grid-template-columns: minmax(0, 820px);
+		justify-content: center;
+	}
+}
+
+.blog-card {
+	display: block;
+	margin: 0;
+	border-top: 1px solid var(--hair);
+	padding-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.blog-card__media {
+	display: block;
+	overflow: hidden;
+	background: var(--paper-2);
+}
+
+.blog-card__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+	transition: opacity 0.5s ease, transform 0.9s ease;
+}
+
+.blog-card:hover .blog-card__media img {
+	opacity: 0.9;
+	transform: scale(1.015);
+}
+
+.blog-card__body {
+	display: block;
+}
+
+.blog-card__date,
+.blog-post__date {
+	display: block;
+	margin: 1.1rem 0 0;
+	font-size: 0.62rem;
+	letter-spacing: 0.24em;
+	text-transform: uppercase;
+	color: var(--gold-text);
+}
+
+.blog-card h2 {
+	margin: 0.55rem 0 0.7rem;
+	font-size: var(--step-2);
+	line-height: 1.16;
+}
+
+.blog-card h2 a {
+	color: var(--ink);
+	transition: color 0.3s ease;
+}
+
+.blog-card h2 a:hover {
+	color: var(--gold-text);
+}
+
+.blog-card__lede {
+	display: block;
+	margin: 0 0 1.2rem;
+	max-width: 42ch;
+	color: var(--ink-soft);
+	font-size: var(--step-0);
+}
+
+.blog-empty {
+	margin: 3rem auto 0;
+	max-width: 40ch;
+	text-align: center;
+	color: var(--ink-soft);
+}
+
+.blog-post__head {
+	margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.blog-post__head h1 {
+	max-width: 20ch;
+	margin-inline: auto;
+}
+
+.blog-post__date {
+	display: flex;
+	justify-content: center;
+	gap: 0.35rem 0.6rem;
+	flex-wrap: wrap;
+	margin-top: 1.4rem;
+	color: var(--ink-soft);
+}
+
+.blog-post__date time {
+	color: var(--gold-text);
+}
+
+.blog-post__media {
+	max-width: 1100px;
+	margin: 0 auto clamp(2.5rem, 6vw, 4rem);
+}
+
+.blog-post__media img {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: var(--paper-2);
+}
+
+.blog-post__media figcaption {
+	margin-top: 0.9rem;
+	font-size: 0.62rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--ink-soft);
+}
+
+.blog-post__body {
+	max-width: 68ch;
+}
+
+.blog-post__body > p {
+	font-size: var(--step-0);
+	line-height: 1.85;
+	color: var(--ink-soft);
+}
+
+.blog-post__reflection {
+	position: relative;
+	max-width: 54ch;
+	margin: clamp(2.5rem, 6vw, 3.5rem) auto;
+	padding: 0.2rem 0 0.2rem clamp(1.2rem, 3vw, 2rem);
+	border-left: 1px solid var(--gold);
+	font-family: var(--font-display);
+	font-size: var(--step-1);
+	line-height: 1.55;
+	letter-spacing: 0.03em;
+	color: var(--ink);
+}
+
+.blog-post__reflection::before {
+	content: "\201C";
+	display: block;
+	margin-bottom: 0.4rem;
+	font-size: 2.2rem;
+	line-height: 0.8;
+	color: var(--gold);
+}
+
+.blog-post__back {
+	margin-top: clamp(2.5rem, 6vw, 4rem);
+	text-align: center;
+}
+
+@media (max-width: 599px) {
+	.blog-card h2 {
+		font-size: var(--step-1);
+	}
+
+	.blog-post__reflection {
+		font-size: var(--step-0);
+	}
+}

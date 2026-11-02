@@ -7,9 +7,27 @@
 		<priority>1.0</priority>
 	</url>
 	<url>
+		<loc>https://theinkengine.art/blog/</loc>
+		<lastmod>2026-11-01</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
 		<loc>https://theinkengine.art/programa.html</loc>
 		<lastmod>2026-10-30</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://theinkengine.art/blog/2026-11-01-arte-como-terapia.html</loc>
+		<lastmod>2026-11-01</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://theinkengine.art/blog/2026-11-01-oxido-como-fecha.html</loc>
+		<lastmod>2026-11-01</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
 	</url>
 </urlset>

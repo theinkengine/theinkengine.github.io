@@ -44,6 +44,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 			}
 		});
 
+		document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+			const key = el.getAttribute("data-i18n-alt");
+			if (dict[key]) {
+				el.setAttribute("alt", dict[key]);
+			}
+		});
+
 		document.querySelectorAll(".lang-switcher button").forEach((btn) => {
 			const isActive = btn.getAttribute("data-lang") === lang;
 			btn.classList.toggle("active", isActive);
