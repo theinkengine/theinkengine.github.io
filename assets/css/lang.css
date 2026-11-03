@@ -1,5 +1,9 @@
 /* The Ink Engine - language switcher */
 
+html.ink-lang-pending body {
+	visibility: hidden;
+}
+
 .lang-switcher {
 	display: inline-flex;
 	align-items: center;

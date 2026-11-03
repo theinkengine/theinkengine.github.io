@@ -1,5 +1,47 @@
 document.addEventListener("DOMContentLoaded", async () => {
-	const savedLang = localStorage.getItem("ink_lang") || "es";
+	const savedLang = localStorage.getItem("ink_lang");
+	const SPANISH_COUNTRIES = new Set(
+		"AR BO CL CO CR CU DO EC SV GQ GT HN MX NI PA PY PE PR ES UY VE".split(" ")
+	);
+
+	function langFromLanguage() {
+		const langs =
+			navigator.languages && navigator.languages.length
+				? navigator.languages
+				: [navigator.language || ""];
+		return langs.some((l) => /^es(-|$)/i.test(l)) ? "es" : "en";
+	}
+
+	async function langFromCountry() {
+		try {
+			const controller = new AbortController();
+			const timer = setTimeout(() => controller.abort(), 1200);
+			const res = await fetch("/cdn-cgi/trace", {
+				signal: controller.signal,
+				cache: "no-store"
+			});
+			clearTimeout(timer);
+			if (!res.ok) return null;
+			const text = await res.text();
+			const match = /^loc=([A-Z]{2})$/m.exec(text);
+			if (!match) return null;
+			const country = match[1];
+			if (country === "XX" || country === "T1") return null;
+			return SPANISH_COUNTRIES.has(country) ? "es" : "en";
+		} catch (e) {
+			return null;
+		}
+	}
+
+	function detectLang() {
+		return window.INK_BOOT_LANG || langFromLanguage();
+	}
+
+	async function correctLangFromCountry(currentLang) {
+		const byCountry = await langFromCountry();
+		if (byCountry && byCountry !== currentLang) applyLang(byCountry, false);
+	}
+
 	let translations = window.INK_TRANSLATIONS || null;
 
 	if (!translations) {
@@ -12,8 +54,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 		}
 	}
 
-	function applyLang(lang) {
-		localStorage.setItem("ink_lang", lang);
+	function applyLang(lang, persist) {
+		if (persist) localStorage.setItem("ink_lang", lang);
 		document.documentElement.lang = lang;
 
 		const dict = translations[lang] || translations["es"];
@@ -56,12 +98,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 			btn.classList.toggle("active", isActive);
 			btn.setAttribute("aria-pressed", isActive ? "true" : "false");
 		});
+
+		document.documentElement.classList.remove("ink-lang-pending");
 	}
 
 	function bindSwitcher() {
 		document.querySelectorAll(".lang-switcher button").forEach((btn) => {
 			btn.addEventListener("click", () => {
-				applyLang(btn.getAttribute("data-lang"));
+				applyLang(btn.getAttribute("data-lang"), true);
 			});
 		});
 	}
@@ -83,5 +127,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 		bindSwitcher();
 	}
 
-	applyLang(savedLang);
+	const initialLang = savedLang || detectLang();
+	applyLang(initialLang, false);
+
+	if (!savedLang) {
+		correctLangFromCountry(initialLang);
+	}
 });
