@@ -15,7 +15,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
 		<link rel="stylesheet" href="assets/css/site.css" />
-		<link rel="stylesheet" href="assets/css/classes.css?v=20261101a" />
+		<link rel="stylesheet" href="assets/css/classes.css?v=20261109a" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV3L4K3BGD"></script>
@@ -326,8 +326,13 @@
 								<li data-i18n="classes_li4">Composición marítima e industrial</li>
 								<li data-i18n="classes_li5">Flujo de trabajo híbrido: captura, retoque y preparación para impresión</li>
 							</ul>
-							<div class="actions">
-								<a class="button" data-i18n="classes_btn" href="programa.html">Leer el programa completo</a>
+							<div class="classes-cta">
+								<p class="eyebrow" data-i18n="classes_cta_eyebrow">Dos caminos</p>
+								<h3 data-i18n="classes_cta_title">Elegí cómo empezar.</h3>
+								<p data-i18n="classes_cta_note">Clases uno a uno desde USD 25 la clase de prueba, o el programa completo de ocho sesiones.</p>
+								<div class="actions">
+									<a class="button button--solid" data-i18n="classes_cta_private" href="privateclasses.html">Clases particulares</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -376,8 +381,10 @@
 							<input type="email" id="newsletter-email" name="email" autocomplete="email" placeholder="tu@ejemplo.com" data-i18n="news_placeholder" required aria-describedby="newsletter-status" />
 							<button type="submit" data-i18n="news_btn">Suscribirse</button>
 						</div>
+						<input type="hidden" name="embed" value="1" />
 						<p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
 					</form>
+					<iframe name="newsletter-target" id="newsletter-target" title="Newsletter" hidden tabindex="-1"></iframe>
 				</div>
 			</section>
 
@@ -438,8 +445,9 @@
 
 		<script src="assets/js/works-data.js"></script>
 		<script src="assets/js/works.js"></script>
-		<script src="assets/data/translations.js?v=20261101i"></script>
+		<script src="assets/data/translations.js?v=20261109i"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
+		<script src="assets/js/site-config.js?v=20261109b"></script>
 
 		<script type="module">
 			const head = document.querySelector(".site-head");
@@ -480,17 +488,28 @@
 			const form = document.getElementById("newsletter-form");
 			const status = document.getElementById("newsletter-status");
 			const dict = window.INK_CURRENT_DICT || {};
+			const cfg = window.INK_CONFIG || {};
 			if (form) {
+				const emailInput = form.querySelector('input[type="email"]');
+				if (cfg.buttondownUser) {
+					form.setAttribute("action", "https://buttondown.email/api/emails/embed-subscribe/" + encodeURIComponent(cfg.buttondownUser));
+					form.setAttribute("method", "post");
+					form.setAttribute("target", "newsletter-target");
+				}
 				form.addEventListener("submit", (event) => {
-					event.preventDefault();
-					const email = form.querySelector('input[type="email"]');
-					if (!email || !email.checkValidity()) {
+					if (!emailInput || !emailInput.checkValidity()) {
+						event.preventDefault();
 						if (status) { status.textContent = dict.news_invalid || "Por favor, introduce un correo electrónico válido."; }
-						if (email) { email.focus(); }
+						if (emailInput) { emailInput.focus(); }
 						return;
 					}
+					if (cfg.buttondownUser) {
+						if (status) { status.textContent = dict.news_confirm || "Check your inbox to confirm the subscription."; }
+						return;
+					}
+					event.preventDefault();
 					const subject = encodeURIComponent(dict.news_subject || "Carta del estudio — suscripción");
-					const body = encodeURIComponent((dict.news_body || "Por favor, añade a {email} a la lista de correo del estudio.").replace("{email}", email.value));
+					const body = encodeURIComponent((dict.news_body || "Por favor, añade a {email} a la lista de correo del estudio.").replace("{email}", emailInput.value));
 					if (status) { status.textContent = dict.news_opening || "Abriendo tu aplicación de correo para completar la suscripción."; }
 					window.location.href = "mailto:theinkengine@gmail.com?subject=" + subject + "&body=" + body;
 				});
