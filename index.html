@@ -14,7 +14,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
-		<link rel="stylesheet" href="assets/css/site.css?v=20261111c" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261111b" />
 		<link rel="stylesheet" href="assets/css/classes.css?v=20261109a" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<!-- Google tag (gtag.js) -->
@@ -331,7 +331,6 @@
 							<input type="email" id="newsletter-email" name="email" autocomplete="email" maxlength="254" placeholder="tu@ejemplo.com" data-i18n="news_placeholder" required aria-describedby="newsletter-status" />
 							<button type="submit" data-i18n="news_btn">Suscribirse</button>
 						</div>
-						<div class="h-captcha" data-captcha="true"></div>
 						<input type="checkbox" name="botcheck" id="newsletter-botcheck" class="book-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
 						<p class="form-status" id="newsletter-status" role="status" aria-live="polite"></p>
 					</form>
@@ -384,7 +383,7 @@
 		</footer>
 
 		<script src="assets/js/form-utils.js?v=20261111a"></script>
-		<script src="assets/data/translations.js?v=20261111g"></script>
+		<script src="assets/data/translations.js?v=20261111f"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
 		<script src="assets/js/site-config.js?v=20261109b"></script>
 
@@ -446,12 +445,6 @@
 					const honeypot = form.querySelector('[name="botcheck"]');
 					if (honeypot && honeypot.checked) return;
 
-					const captcha = form.querySelector('[name="h-captcha-response"]');
-					if (captcha && !captcha.value) {
-						if (status) { status.textContent = dict.form_captcha || "Completá el captcha para enviar."; }
-						return;
-					}
-
 					const key = cfg.web3formsKey;
 					if (!key) {
 						const subject = encodeURIComponent(dict.news_subject || "Carta del estudio — suscripción");
@@ -475,15 +468,13 @@
 								email: email,
 								message: "Nueva suscripción a la carta del estudio: " + email,
 								language: document.documentElement.lang === "en" ? "en" : "es",
-								page: window.location.href,
-								"h-captcha-response": captcha ? captcha.value : ""
+								page: window.location.href
 							})
 						});
 						const result = await response.json();
 						if (!result || !result.success) throw new Error((result && result.message) || "error");
 						if (status) { status.textContent = dict.news_success || "Listo. Tu correo llegó al estudio."; }
 						form.reset();
-						if (window.hcaptcha && typeof window.hcaptcha.reset === "function") window.hcaptcha.reset();
 					} catch (error) {
 						if (status) { status.textContent = dict.news_error || "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com."; }
 					} finally {
@@ -492,6 +483,5 @@
 				});
 			}
 		</script>
-		<script src="https://web3forms.com/client/script.js" async defer></script>
 	</body>
 </html>
