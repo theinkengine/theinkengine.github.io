@@ -1662,6 +1662,7 @@ html.js [data-reveal].is-visible {
 }
 
 .book-form__head,
+.h-captcha,
 .book-field--full,
 .book-form__actions,
 .book-form__status,
@@ -1749,6 +1750,15 @@ html.js [data-reveal].is-visible {
 	width: 1px;
 	height: 1px;
 	opacity: 0;
+}
+
+.h-captcha {
+	margin: 0.2rem 0;
+	max-width: 100%;
+}
+
+.h-captcha iframe {
+	max-width: 100%;
 }
 
 .book-dialog__close {

@@ -17,7 +17,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
-		<link rel="stylesheet" href="assets/css/site.css?v=20261111b" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261111c" />
 		<link rel="stylesheet" href="assets/css/gallery.css?v=20261111b" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<!-- Google tag (gtag.js) -->
@@ -117,6 +117,7 @@
 					<span data-i18n="acquisition_message">Consulta o instrucciones de envío</span>
 					<textarea name="message" rows="3" maxlength="1500"></textarea>
 				</label>
+				<div class="h-captcha" data-captcha="true"></div>
 				<div class="book-form__actions">
 					<button type="submit" class="button button--solid" id="acquisition-submit" data-i18n="acquisition_submit">Consultar precio</button>
 					<button type="button" class="button" id="acquisition-cancel" data-i18n="book_cancel">Cancelar</button>
@@ -152,7 +153,7 @@
 
 		<script src="assets/js/site-config.js?v=20261109b"></script>
 		<script src="assets/js/form-utils.js?v=20261111a"></script>
-		<script src="assets/data/translations.js?v=20261111f"></script>
+		<script src="assets/data/translations.js?v=20261111g"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
 		<script src="assets/js/works-data.js?v=20261111c"></script>
 		<script src="assets/js/works.js?v=20261111b"></script>
@@ -292,6 +293,13 @@
 					event.preventDefault();
 					var honeypot = form.querySelector('[name="botcheck"]');
 					if (honeypot && honeypot.checked) return;
+					var captcha = form.elements["h-captcha-response"];
+					if (captcha && !captcha.value) {
+						if (statusEl) {
+							statusEl.textContent = text("form_captcha", currentLang() === "en" ? "Please complete the captcha to send." : "Completá el captcha para enviar.");
+						}
+						return;
+					}
 					var lang = currentLang();
 					if (!selectedWork) {
 						if (statusEl) {
@@ -418,7 +426,8 @@
 							delivery: deliveryValue,
 							work: workValue,
 							price: workPrice,
-							message: lines.join("\n")
+							message: lines.join("\n"),
+							"h-captcha-response": captcha ? captcha.value : ""
 						})
 					}).then(function (response) {
 						return response.json();
@@ -427,6 +436,7 @@
 							throw new Error((data && data.message) || "send failed");
 						}
 						form.reset();
+						if (window.hcaptcha && typeof window.hcaptcha.reset === "function") window.hcaptcha.reset();
 						if (statusEl) {
 							statusEl.textContent = text("book_success", lang === "en" ? "Done. Your message arrived; I'll reply to your email." : "Listo. Tu mensaje llegó; te respondo a tu correo.");
 						}
@@ -440,5 +450,6 @@
 				});
 			})();
 		</script>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
 	</body>
 </html>

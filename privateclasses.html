@@ -15,7 +15,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
-		<link rel="stylesheet" href="assets/css/site.css?v=20261111b" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261111c" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<link rel="stylesheet" href="assets/css/privateclasses.css?v=20261109f" />
 		<!-- Google tag (gtag.js) -->
@@ -316,6 +316,7 @@
 					<span data-i18n="book_schedule">Días y horarios preferidos</span>
 					<textarea name="schedule" rows="2" maxlength="1000"></textarea>
 				</label>
+				<div class="h-captcha" data-captcha="true"></div>
 				<div class="book-form__actions">
 					<button type="submit" class="button button--solid" id="book-submit" data-i18n="book_submit">Enviar reserva</button>
 					<button type="button" class="button" id="book-cancel" data-i18n="book_cancel">Cancelar</button>
@@ -339,7 +340,7 @@
 		</footer>
 
 		<script src="assets/js/form-utils.js?v=20261111a"></script>
-		<script src="assets/data/translations.js?v=20261111f"></script>
+		<script src="assets/data/translations.js?v=20261111g"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
 		<script src="assets/js/site-config.js?v=20261109b"></script>
 
@@ -389,6 +390,7 @@
 						sending: "Enviando…",
 						success: "Listo. Tu mensaje llegó; te respondo a tu correo.",
 						error: "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com.",
+						captcha: "Completá el captcha para enviar.",
 						mailto: "Abriendo tu aplicación de correo…"
 					},
 					en: {
@@ -407,6 +409,7 @@
 						sending: "Sending…",
 						success: "Done. Your message arrived; I'll reply to your email.",
 						error: "Could not send. Please try again or email theinkengine@gmail.com.",
+						captcha: "Please complete the captcha to send.",
 						mailto: "Opening your email app…"
 					}
 				};
@@ -515,6 +518,12 @@
 						var honeypot = form.elements["botcheck"];
 						if (honeypot && honeypot.checked) return;
 
+						var captcha = form.elements["h-captcha-response"];
+						if (captcha && !captcha.value) {
+							if (statusEl) statusEl.textContent = L.captcha;
+							return;
+						}
+
 						var F = window.INK_FORMS || {};
 						var clean = F.cleanText || function (value, maxLength) { return String(value == null ? "" : value).trim().slice(0, maxLength || 0); };
 						var cleanEmail = F.cleanEmail || function (value) { return clean(value, 254).replace(/\s+/g, ""); };
@@ -573,7 +582,8 @@
 								schedule: data.schedule || "",
 								option: data.option || "",
 								language: l,
-								page: window.location.href
+								page: window.location.href,
+								"h-captcha-response": captcha ? captcha.value : ""
 							})
 						})
 							.then(function (response) { return response.json(); })
@@ -583,6 +593,7 @@
 								}
 								if (statusEl) statusEl.textContent = L.success;
 								form.reset();
+								if (window.hcaptcha && typeof window.hcaptcha.reset === "function") window.hcaptcha.reset();
 								window.setTimeout(closeDialog, 2000);
 							})
 							.catch(function () {
@@ -618,5 +629,6 @@
 				}
 			})();
 		</script>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
 	</body>
 </html>
