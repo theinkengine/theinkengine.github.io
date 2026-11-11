@@ -1,0 +1,105 @@
+/* Galería — portada y sección */
+
+.gallery-cover {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 64svh;
+	padding: clamp(8.5rem, 17vh, 12rem) var(--gutter) clamp(3.5rem, 8vh, 6rem);
+	overflow: hidden;
+	background: var(--charcoal-2);
+	color: #fff;
+	text-align: center;
+}
+
+.gallery-cover picture {
+	position: absolute;
+	inset: 0;
+	display: block;
+}
+
+.gallery-cover__media {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gallery-cover__veil {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(10, 10, 12, 0.68) 0%, rgba(10, 10, 12, 0.32) 44%, rgba(10, 10, 12, 0.84) 100%);
+}
+
+.gallery-cover__content {
+	position: relative;
+	max-width: min(92vw, 50rem);
+}
+
+.gallery-cover .eyebrow {
+	color: var(--gold);
+}
+
+.gallery-cover h1 {
+	margin-bottom: 1.2rem;
+	font-size: var(--step-4);
+}
+
+.gallery-cover .lede {
+	max-width: 48ch;
+	margin-inline: auto;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.gallery-index .section-head {
+	margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.gallery-note {
+	max-width: 60ch;
+	margin: clamp(2rem, 4vw, 3rem) auto 0;
+	padding-top: 1.2rem;
+	border-top: 1px solid var(--hair);
+	font-size: 0.9rem;
+	line-height: 1.65;
+	color: var(--ink-soft);
+	text-align: center;
+}
+
+.gallery-note a {
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 0.18em;
+}
+
+.gallery-note a:hover {
+	color: var(--gold-text);
+}
+
+.works-grid .work-acquire {
+	flex-basis: 100%;
+	justify-self: start;
+	width: fit-content;
+	min-height: 0;
+	margin-top: 0.4rem;
+	padding: 0 0 0.15rem;
+	border: 0;
+	border-bottom: 1px solid var(--hair);
+	border-radius: 0;
+	background: transparent;
+	color: var(--gold-text);
+	font-family: var(--font-body);
+	font-size: 0.62rem;
+	font-weight: 400;
+	letter-spacing: 0.16em;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.works-grid .work-acquire:hover,
+.works-grid .work-acquire:focus-visible {
+	background: transparent;
+	color: var(--ink);
+	border-bottom-color: var(--ink);
+}

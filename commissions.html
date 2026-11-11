@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<script>document.documentElement.classList.add("js");</script>
+		<script src="assets/js/lang-boot.js?v=20261103a"></script>
+		<title data-i18n="commissions_page_title">Encargos — Obra original a medida | The Ink Engine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" data-i18n-content="commissions_page_description" content="Encargos de acuarela y tinta a medida: una máquina, un barco o un taller dibujado una sola vez. Contame tu referencia y recibí una propuesta." />
+		<link rel="canonical" href="https://theinkengine.art/commissions.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://theinkengine.art/commissions.html" />
+		<meta property="og:title" data-i18n-content="commissions_page_title" content="Encargos — Obra original a medida | The Ink Engine" />
+		<meta property="og:description" data-i18n-content="commissions_page_description" content="Encargos de acuarela y tinta a medida: una máquina, un barco o un taller dibujado una sola vez." />
+		<meta property="og:image" content="https://theinkengine.art/images/gallery/og-cover.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261111b" />
+		<link rel="stylesheet" href="assets/css/commissions.css?v=20261111a" />
+		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV3L4K3BGD"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-YV3L4K3BGD');
+		</script>
+	</head>
+	<body id="top" class="has-hero">
+		<a class="skip" href="#main" data-i18n="skip_link">Saltar al contenido</a>
+
+		<header class="site-head" data-scrolled="false">
+			<div class="site-head__inner wrap">
+				<a class="brand" href="index.html">The Ink Engine</a>
+				<nav class="site-nav" aria-label="Principal" data-i18n-aria-label="nav_aria">
+					<a href="index.html#work" data-i18n="nav_work">Obra</a>
+					<a href="gallery.html" data-i18n="nav_gallery">Galería</a>
+					<a href="index.html#series" data-i18n="nav_series">Series</a>
+					<a href="index.html#hybrid" data-i18n="nav_hybrid">Híbrido</a>
+					<a href="privateclasses.html" data-i18n="nav_classes">Clases</a>
+					<a href="commissions.html" aria-current="page" data-i18n="nav_commissions">Encargos</a>
+					<a href="index.html#contact" data-i18n="nav_contact">Contacto</a>
+					<a href="blog/index.html" data-i18n="nav_journal">Diario</a>
+					<div class="lang-switcher" role="group" aria-label="Idioma / Language">
+						<button type="button" data-lang="es" aria-pressed="true">ES</button>
+						<span class="lang-switcher__sep" aria-hidden="true"></span>
+						<button type="button" data-lang="en" aria-pressed="false">EN</button>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<main id="main">
+			<section class="commission-hero" aria-labelledby="commission-hero-title">
+				<img class="commission-hero__media" src="images/mockuptest2a2.png" width="1440" height="1440" alt="" fetchpriority="high" decoding="async" />
+				<div class="commission-hero__veil" aria-hidden="true"></div>
+				<div class="commission-hero__content">
+					<p class="eyebrow" data-i18n="commissions_eyebrow">07 &mdash; Encargos</p>
+					<h1 id="commission-hero-title" data-i18n="commissions_title">Una máquina que amas, dibujada una sola vez.</h1>
+					<p data-i18n="commissions_p1">Los encargos comienzan con tu referencia: un barco en el que navegaste, un taller que dejaste atrás, una máquina que aún gira en tu memoria. Un original, hecho una sola vez, firmado.</p>
+					<p data-i18n="commissions_p2">Cada encargo se acuerda en una conversación: referencia, formato, paleta y plazo. Recibís una propuesta antes de empezar y el original se entrega firmado, con su certificado.</p>
+					<div class="commission-hero__actions">
+						<a class="button button--light" href="#commission-form-section" data-i18n="commissions_btn">Completar el formulario de encargo</a>
+						<a class="text-link" href="gallery.html" data-i18n="commissions_acquisition_link">¿Buscás una obra ya creada? Ver obras disponibles</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="section section--light commission-form-section" id="commission-form-section" aria-labelledby="commission-form-title">
+				<div class="wrap commission-form-panel">
+					<form class="book-form" id="commission-form" novalidate>
+						<div class="book-form__head">
+							<p class="eyebrow" data-i18n="commission_eyebrow">Encargo a medida</p>
+							<h2 id="commission-form-title" data-i18n="commission_title">Contame qué querés pintar.</h2>
+							<p class="book-form__option" data-i18n="commission_lede">Un encargo empieza con una referencia: un barco, un puerto, una máquina que todavía gira en tu memoria. Contame la historia y te respondo con una propuesta.</p>
+						</div>
+						<input type="checkbox" name="botcheck" id="commission-botcheck" class="book-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+						<label class="book-field">
+							<span data-i18n="book_name">Nombre</span>
+							<input type="text" name="name" autocomplete="name" maxlength="80" minlength="2" required />
+						</label>
+						<label class="book-field">
+							<span data-i18n="book_email">Email</span>
+							<input type="email" name="email" autocomplete="email" maxlength="254" required />
+						</label>
+						<label class="book-field book-field--full">
+							<span data-i18n="commission_idea">Qué te gustaría encargar</span>
+							<textarea name="idea" rows="3" maxlength="1500" required></textarea>
+						</label>
+						<label class="book-field">
+							<span data-i18n="commission_reference">Referencia o historia</span>
+							<input type="text" name="reference" maxlength="500" />
+						</label>
+						<label class="book-field">
+							<span data-i18n="commission_format">Formato o medidas</span>
+							<input type="text" name="format" maxlength="100" required aria-required="true" />
+						</label>
+						<label class="book-field">
+							<span data-i18n="commission_budget">Presupuesto (opcional)</span>
+							<input type="text" name="budget" maxlength="60" />
+						</label>
+						<label class="book-field book-field--full">
+							<span data-i18n="commission_message">Detalles</span>
+							<textarea name="message" rows="3" maxlength="1500"></textarea>
+						</label>
+						<div class="book-form__actions">
+							<button type="submit" class="button button--solid" id="commission-submit" data-i18n="commission_submit">Enviar solicitud de encargo</button>
+						</div>
+						<p class="book-form__status" id="commission-status" role="status" aria-live="polite"></p>
+						<p class="book-form__note" data-i18n="commission_note">Los encargos se coordinan con anticipación. Te respondo con una propuesta, un precio y un plazo.</p>
+					</form>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-foot">
+			<div class="site-foot__inner wrap">
+				<p data-i18n="footer_p">Obra original y ediciones firmadas de diez ejemplares. Sigue el trabajo diario &mdash; papel húmedo, errores y alguna que otra buena línea.</p>
+				<p class="icons">
+					<a href="https://www.instagram.com/theinkengine/">Instagram</a>
+					<a href="https://ar.pinterest.com/theinkengine/">Pinterest</a>
+				</p>
+				<p class="foot-disclaimer" data-i18n="footer_disclaimer">Los colores, el contraste y la textura pueden variar según la pantalla y la calibración de cada dispositivo. Las fotografías buscan reflejar la obra con la mayor fidelidad posible.</p>
+				<p class="fine">&copy; <span id="year">2026</span> The Ink Engine &middot; <span data-i18n="design">Diseño: The Ink Engine</span></p>
+			</div>
+		</footer>
+
+		<script src="assets/js/site-config.js?v=20261109b"></script>
+		<script src="assets/js/form-utils.js?v=20261111a"></script>
+		<script src="assets/data/translations.js?v=20261111f"></script>
+		<script src="assets/js/lang.js?v=20261103a"></script>
+
+		<script type="module">
+			const head = document.querySelector(".site-head");
+			const year = document.getElementById("year");
+			if (year) { year.textContent = String(new Date().getFullYear()); }
+			if (head) {
+				const onScroll = () => { head.dataset.scrolled = String(window.scrollY > 40); };
+				window.addEventListener("scroll", onScroll, { passive: true });
+				onScroll();
+			}
+
+			const items = document.querySelectorAll("[data-reveal]");
+			if (!("IntersectionObserver" in window)) {
+				items.forEach((el) => el.classList.add("is-visible"));
+			} else {
+				let fired = false;
+				const io = new IntersectionObserver((entries) => {
+					fired = true;
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("is-visible");
+							io.unobserve(entry.target);
+						}
+					});
+				}, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+				items.forEach((el) => io.observe(el));
+				window.setTimeout(() => {
+					if (!fired) { items.forEach((el) => el.classList.add("is-visible")); }
+				}, 2000);
+			}
+		</script>
+
+		<script>
+			(function () {
+				var form = document.getElementById("commission-form");
+				var statusEl = document.getElementById("commission-status");
+				if (!form) return;
+
+				function currentLang() {
+					return document.documentElement.lang === "en" ? "en" : "es";
+				}
+
+				function dict() {
+					return window.INK_CURRENT_DICT || {};
+				}
+
+				function text(key, fallback) {
+					var value = dict()[key];
+					return value || fallback;
+				}
+
+				form.addEventListener("submit", function (event) {
+					event.preventDefault();
+					var honeypot = form.querySelector('[name="botcheck"]');
+					if (honeypot && honeypot.checked) return;
+					if (!form.checkValidity()) {
+						var lang = currentLang();
+						if (statusEl) {
+							statusEl.textContent = text("commission_invalid", lang === "en" ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						}
+						var invalid = form.querySelector(":invalid");
+						if (invalid) invalid.focus();
+						return;
+					}
+
+					var lang = currentLang();
+					var F = window.INK_FORMS || {};
+					var clean = F.cleanText || function (value, maxLength) { return String(value == null ? "" : value).trim().slice(0, maxLength || 0); };
+					var cleanEmail = F.cleanEmail || function (value) { return clean(value, 254).replace(/\s+/g, ""); };
+					var isEmail = F.isEmail || function (value) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value); };
+
+					var emailInput = form.elements["email"];
+					var emailValue = cleanEmail(emailInput ? emailInput.value : "");
+					if (!isEmail(emailValue)) {
+						if (statusEl) {
+							statusEl.textContent = text("commission_invalid", lang === "en" ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						}
+						if (emailInput) emailInput.focus();
+						return;
+					}
+					if (emailInput) emailInput.value = emailValue;
+
+					var fieldDefs = [
+						["name", "book_name", lang === "en" ? "Name" : "Nombre", 80, false],
+						["email", "book_email", "Email", 254, false],
+						["idea", "commission_idea", lang === "en" ? "What I would like commissioned" : "Qué me gustaría encargar", 1500, true],
+						["reference", "commission_reference", lang === "en" ? "Reference or story" : "Referencia o historia", 500, false],
+						["format", "commission_format", lang === "en" ? "Format or dimensions" : "Formato o medidas", 100, false],
+						["budget", "commission_budget", lang === "en" ? "Budget" : "Presupuesto", 60, false],
+						["message", "commission_message", lang === "en" ? "Details" : "Detalles", 1500, true]
+					];
+					var lines = [
+						lang === "en" ? "Hello," : "Hola,",
+						"",
+						lang === "en" ? "I would like to commission a work." : "Me gustaría encargar una obra.",
+						"",
+						lang === "en" ? "Commission details:" : "Datos del encargo:"
+					];
+					fieldDefs.forEach(function (field) {
+						var input = form.elements[field[0]];
+						var value = input ? clean(input.value, field[3], field[4]) : "";
+						if (input) input.value = value;
+						if (value) {
+							lines.push("· " + text(field[1], field[2]) + ": " + value);
+						}
+					});
+					var nameValue = form.elements["name"] ? form.elements["name"].value : "";
+					var ideaValue = form.elements["idea"] ? form.elements["idea"].value : "";
+					var formatValue = form.elements["format"] ? form.elements["format"].value : "";
+					var missingField = !nameValue ? form.elements["name"] : (!ideaValue ? form.elements["idea"] : (!formatValue ? form.elements["format"] : null));
+					if (missingField) {
+						if (statusEl) {
+							statusEl.textContent = text("commission_invalid", lang === "en" ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						}
+						missingField.focus();
+						return;
+					}
+					lines.push("", lang === "en" ? "Thank you." : "Gracias.");
+
+					var subject = lang === "en" ? "Commission request — The Ink Engine" : "Solicitud de encargo — The Ink Engine";
+					var submitBtn = form.querySelector('button[type="submit"]');
+					var originalLabel = submitBtn ? submitBtn.textContent : "";
+					var accessKey = (window.INK_CONFIG || {}).web3formsKey;
+
+					function setBusy(busy) {
+						if (!submitBtn) return;
+						submitBtn.disabled = busy;
+						submitBtn.textContent = busy ? text("book_sending", lang === "en" ? "Sending…" : "Enviando…") : originalLabel;
+					}
+
+					if (!accessKey) {
+						if (statusEl) {
+							statusEl.textContent = text("book_mailto", lang === "en" ? "Opening your email app…" : "Abriendo tu aplicación de correo…");
+						}
+						window.location.href = "mailto:theinkengine@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\r\n"));
+						return;
+					}
+
+					if (statusEl) statusEl.textContent = text("book_sending", lang === "en" ? "Sending…" : "Enviando…");
+					setBusy(true);
+
+					fetch("https://api.web3forms.com/submit", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"Accept": "application/json"
+						},
+						body: JSON.stringify({
+							access_key: accessKey,
+							subject: subject,
+							from_name: "The Ink Engine",
+							replyto: emailValue,
+							name: (form.elements["name"] || {}).value || "",
+							email: emailValue,
+							idea: (form.elements["idea"] || {}).value || "",
+							reference: (form.elements["reference"] || {}).value || "",
+							format: (form.elements["format"] || {}).value || "",
+							budget: (form.elements["budget"] || {}).value || "",
+							notes: (form.elements["message"] || {}).value || "",
+							message: lines.join("\n")
+						})
+					}).then(function (response) {
+						return response.json();
+					}).then(function (data) {
+						if (!data || !data.success) {
+							throw new Error((data && data.message) || "send failed");
+						}
+						form.reset();
+						if (statusEl) {
+							statusEl.textContent = text("book_success", lang === "en" ? "Done. Your message arrived; I'll reply to your email." : "Listo. Tu mensaje llegó; te respondo a tu correo.");
+						}
+					}).catch(function () {
+						if (statusEl) {
+							statusEl.textContent = text("book_error", lang === "en" ? "Could not send. Please try again or email theinkengine@gmail.com." : "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com.");
+						}
+					}).then(function () {
+						setBusy(false);
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>

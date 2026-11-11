@@ -1,0 +1,105 @@
+/* Encargos — portada y formulario */
+
+.commission-hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 78svh;
+	padding: clamp(9rem, 18vh, 13rem) var(--gutter) clamp(4rem, 8vh, 6rem);
+	overflow: hidden;
+	background: var(--charcoal-2);
+	color: #fff;
+	text-align: center;
+}
+
+.commission-hero__media {
+	position: absolute;
+	inset: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.commission-hero__veil {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(10, 10, 12, 0.72) 0%, rgba(10, 10, 12, 0.38) 45%, rgba(10, 10, 12, 0.86) 100%);
+}
+
+.commission-hero__content {
+	position: relative;
+	max-width: min(92vw, 52rem);
+}
+
+.commission-hero .eyebrow {
+	color: var(--gold);
+}
+
+.commission-hero h1 {
+	margin-bottom: 1.1rem;
+	font-size: var(--step-4);
+}
+
+.commission-hero p {
+	max-width: 58ch;
+	margin-inline: auto;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.commission-hero p + p {
+	margin-top: 1rem;
+}
+
+.commission-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.9rem 1.4rem;
+	margin-top: 1.8rem;
+}
+
+.commission-hero .text-link {
+	color: rgba(255, 255, 255, 0.86);
+	border-color: var(--hair-light);
+}
+
+.commission-hero .text-link:hover {
+	color: var(--gold);
+	border-color: var(--gold);
+}
+
+.commission-form-section {
+	scroll-margin-top: 7rem;
+}
+
+.commission-form-panel {
+	max-width: 900px;
+	margin-inline: auto;
+	padding: clamp(1.4rem, 3vw, 2.4rem);
+	border: 1px solid var(--hair);
+	border-radius: 14px;
+	background: #fff;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.commission-form-panel .book-form {
+	padding: 0;
+}
+
+.commission-form-panel .book-form__head h2 {
+	font-size: var(--step-2);
+}
+
+.commission-form-panel .book-form__option {
+	font-size: 0.95rem;
+	line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+	.commission-hero {
+		min-height: 70svh;
+	}
+}

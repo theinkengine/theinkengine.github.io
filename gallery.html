@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<script>document.documentElement.classList.add("js");</script>
+		<script src="assets/js/lang-boot.js?v=20261103a"></script>
+		<title data-i18n="gallery_page_title">Galería — Obra original en acuarela y tinta | The Ink Engine</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" data-i18n-content="gallery_page_description" content="Obra original en acuarela y tinta sobre papel. Estudios de puerto, hierro y agua del taller The Ink Engine." />
+		<link rel="canonical" href="https://theinkengine.art/gallery.html" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://theinkengine.art/gallery.html" />
+		<meta property="og:title" data-i18n-content="gallery_page_title" content="Galería — Obra original en acuarela y tinta | The Ink Engine" />
+		<meta property="og:description" data-i18n-content="gallery_page_og_description" content="Obra original en acuarela y tinta sobre papel. Estudios de puerto, hierro y agua." />
+		<meta property="og:image" content="https://theinkengine.art/images/gallery/og-cover.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261111b" />
+		<link rel="stylesheet" href="assets/css/gallery.css?v=20261111b" />
+		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV3L4K3BGD"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-YV3L4K3BGD');
+		</script>
+	</head>
+	<body id="top" class="has-hero">
+		<a class="skip" href="#main" data-i18n="skip_link">Saltar al contenido</a>
+
+		<header class="site-head" data-scrolled="false">
+			<div class="site-head__inner wrap">
+				<a class="brand" href="index.html">The Ink Engine</a>
+				<nav class="site-nav" aria-label="Principal" data-i18n-aria-label="nav_aria">
+					<a href="index.html#work" data-i18n="nav_work">Obra</a>
+					<a href="gallery.html" aria-current="page" data-i18n="nav_gallery">Galería</a>
+					<a href="index.html#series" data-i18n="nav_series">Series</a>
+					<a href="index.html#hybrid" data-i18n="nav_hybrid">Híbrido</a>
+					<a href="privateclasses.html" data-i18n="nav_classes">Clases</a>
+					<a href="commissions.html" data-i18n="nav_commissions">Encargos</a>
+					<a href="index.html#contact" data-i18n="nav_contact">Contacto</a>
+					<a href="blog/index.html" data-i18n="nav_journal">Diario</a>
+					<div class="lang-switcher" role="group" aria-label="Idioma / Language">
+						<button type="button" data-lang="es" aria-pressed="true">ES</button>
+						<span class="lang-switcher__sep" aria-hidden="true"></span>
+						<button type="button" data-lang="en" aria-pressed="false">EN</button>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<main id="main">
+			<section class="gallery-cover" aria-labelledby="gallery-title">
+				<picture>
+					<source type="image/webp" srcset="images/gallery/cover-960.webp 960w, images/gallery/cover-1600.webp 1600w" sizes="100vw" />
+					<img class="gallery-cover__media" src="images/gallery/cover-960.jpg" width="960" height="424" data-i18n-alt="gallery_cover_alt" alt="Marina Faro: un velero amarillo y un faro en el horizonte bajo un cielo de niebla, acuarela sobre papel." fetchpriority="high" decoding="async" />
+				</picture>
+				<div class="gallery-cover__veil" aria-hidden="true"></div>
+				<div class="gallery-cover__content">
+					<p class="eyebrow" data-i18n="gallery_eyebrow">02 — Galería</p>
+					<h1 id="gallery-title" data-i18n="gallery_title">Máquinas que recuerdan, mares que insisten.</h1>
+					<p class="lede" data-i18n="gallery_page_lede">Hay un momento en que el hierro recuerda el agua y el papel empieza a sostenerlo. Estas son las obras que salieron del taller: originales en acuarela y tinta, fotografiados y medidos una por una. Las disponibles se consultan por precio y envío.</p>
+				</div>
+			</section>
+
+			<section class="section section--light gallery-index" aria-labelledby="gallery-works-title">
+				<div class="wrap">
+					<div class="section-head" data-reveal>
+						<p class="eyebrow" data-i18n="gallery_index_eyebrow">Obra</p>
+						<h2 id="gallery-works-title" data-i18n="gallery_subtitle">Estudios sobre papel</h2>
+						<p data-i18n="gallery_index_note">Piezas únicas. Técnica y medidas exactas en cada ficha.</p>
+					</div>
+					<div id="works-grid" class="works-grid" data-reveal></div>
+					<p class="gallery-note" data-i18n="gallery_coming">El archivo del taller es más grande que esta página: hay muchas obras disponibles que todavía no están en línea. Iré incorporando nuevas piezas con el tiempo. Mientras tanto, podés revisar mi Instagram anterior, <a href="https://www.instagram.com/leocalcagnoart/" target="_blank" rel="noopener">@leocalcagnoart</a>, o <a href="https://www.instagram.com/theinkengine/" target="_blank" rel="noopener">@theinkengine</a>: quizá encuentres ahí algo que todavía no subí al sitio. Si buscás una obra en particular, escribime.</p>
+				</div>
+			</section>
+		</main>
+
+		<dialog class="book-dialog" id="acquisition-dialog" aria-labelledby="acquisition-title">
+			<form class="book-form" id="acquisition-form" novalidate>
+				<div class="book-form__head">
+					<p class="eyebrow" data-i18n="acquisition_eyebrow">Consulta de obra</p>
+					<h2 id="acquisition-title" data-i18n="acquisition_title">Precio y disponibilidad</h2>
+					<p class="book-form__option" data-i18n="acquisition_lede">Completá tus datos y te respondo con el precio, las opciones de envío y el certificado de autenticidad. Sin compromiso: si la obra te interesa, después coordinamos la adquisición.</p>
+					<p class="book-form__option"><span data-i18n="acquisition_work_label">Obra</span>: <strong id="acquisition-work-label"></strong></p>
+					<p class="book-form__option"><span data-i18n="acquisition_price_label">Precio</span>: <strong id="acquisition-price-value">A consultar</strong></p>
+					<p class="book-form__option" data-i18n="acquisition_price_note">Te respondo en 24 h con el precio final, el envío y las formas de pago.</p>
+				</div>
+				<input type="checkbox" name="botcheck" id="acquisition-botcheck" class="book-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+				<input type="hidden" name="work" id="acquisition-work" value="" />
+				<label class="book-field">
+					<span data-i18n="book_name">Nombre</span>
+					<input type="text" name="name" autocomplete="name" maxlength="80" minlength="2" required />
+				</label>
+				<label class="book-field">
+					<span data-i18n="book_email">Email</span>
+					<input type="email" name="email" autocomplete="email" maxlength="254" required />
+				</label>
+				<label class="book-field">
+					<span data-i18n="acquisition_country">País y ciudad</span>
+					<input type="text" name="country" autocomplete="country-name" maxlength="100" required aria-required="true" />
+				</label>
+				<label class="book-field">
+					<span data-i18n="acquisition_delivery">Entrega</span>
+					<select name="delivery" required aria-required="true">
+						<option value="" data-i18n="acquisition_delivery_0">Elegí una opción</option>
+						<option value="shipping" data-i18n="acquisition_delivery_1">Envío a domicilio</option>
+						<option value="pickup" data-i18n="acquisition_delivery_2">Retiro en el taller</option>
+						<option value="arrange" data-i18n="acquisition_delivery_3">A coordinar</option>
+					</select>
+				</label>
+				<label class="book-field book-field--full">
+					<span data-i18n="acquisition_message">Consulta o instrucciones de envío</span>
+					<textarea name="message" rows="3" maxlength="1500"></textarea>
+				</label>
+				<div class="book-form__actions">
+					<button type="submit" class="button button--solid" id="acquisition-submit" data-i18n="acquisition_submit">Consultar precio</button>
+					<button type="button" class="button" id="acquisition-cancel" data-i18n="book_cancel">Cancelar</button>
+				</div>
+				<p class="book-form__status" id="acquisition-status" role="status" aria-live="polite"></p>
+				<p class="book-form__note" data-i18n="book_note">Respondo personalmente a tu correo, normalmente dentro de 24 horas.</p>
+				<button type="button" class="book-dialog__close" id="acquisition-close" data-i18n-aria-label="book_close" aria-label="Cerrar">&times;</button>
+			</form>
+		</dialog>
+
+		<footer class="site-foot">
+			<div class="site-foot__inner wrap">
+				<p data-i18n="footer_p">Obra original y ediciones firmadas de diez ejemplares. Sigue el trabajo diario &mdash; papel húmedo, errores y alguna que otra buena línea.</p>
+				<p class="icons">
+					<a href="https://www.instagram.com/theinkengine/">Instagram</a>
+					<a href="https://ar.pinterest.com/theinkengine/">Pinterest</a>
+				</p>
+				<p class="foot-disclaimer" data-i18n="footer_disclaimer">Los colores, el contraste y la textura pueden variar según la pantalla y la calibración de cada dispositivo. Las fotografías buscan reflejar la obra con la mayor fidelidad posible.</p>
+				<p class="fine">&copy; <span id="year">2026</span> The Ink Engine &middot; <span data-i18n="design">Diseño: The Ink Engine</span></p>
+			</div>
+		</footer>
+
+		<dialog id="works-lightbox" class="works-lightbox" data-i18n-aria-label="lightbox_aria" aria-label="Visor de obras">
+			<figure>
+				<img src="" alt="" width="1440" height="1440" />
+				<figcaption></figcaption>
+			</figure>
+			<button type="button" class="prev" data-i18n-aria-label="lightbox_prev" aria-label="Obra anterior">&#8592;</button>
+			<button type="button" class="next" data-i18n-aria-label="lightbox_next" aria-label="Obra siguiente">&#8594;</button>
+			<button type="button" class="close" data-i18n-aria-label="lightbox_close" data-i18n="lightbox_close_text" aria-label="Cerrar visor">Cerrar</button>
+			<p class="counter" aria-live="polite"></p>
+		</dialog>
+
+		<script src="assets/js/site-config.js?v=20261109b"></script>
+		<script src="assets/js/form-utils.js?v=20261111a"></script>
+		<script src="assets/data/translations.js?v=20261111f"></script>
+		<script src="assets/js/lang.js?v=20261103a"></script>
+		<script src="assets/js/works-data.js?v=20261111c"></script>
+		<script src="assets/js/works.js?v=20261111b"></script>
+
+		<script type="module">
+			const head = document.querySelector(".site-head");
+			const year = document.getElementById("year");
+			if (year) { year.textContent = String(new Date().getFullYear()); }
+			if (head) {
+				const onScroll = () => { head.dataset.scrolled = String(window.scrollY > 40); };
+				window.addEventListener("scroll", onScroll, { passive: true });
+				onScroll();
+			}
+
+			const items = document.querySelectorAll("[data-reveal]");
+			if (!("IntersectionObserver" in window)) {
+				items.forEach((el) => el.classList.add("is-visible"));
+			} else {
+				let fired = false;
+				const io = new IntersectionObserver((entries) => {
+					fired = true;
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("is-visible");
+							io.unobserve(entry.target);
+						}
+					});
+				}, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+				items.forEach((el) => io.observe(el));
+				window.setTimeout(() => {
+					if (!fired) { items.forEach((el) => el.classList.add("is-visible")); }
+				}, 2000);
+			}
+		</script>
+
+		<script>
+			(function () {
+				var dialog = document.getElementById("acquisition-dialog");
+				var form = document.getElementById("acquisition-form");
+				var closeBtn = document.getElementById("acquisition-close");
+				var cancelBtn = document.getElementById("acquisition-cancel");
+				var statusEl = document.getElementById("acquisition-status");
+				var workLabelEl = document.getElementById("acquisition-work-label");
+				var priceEl = document.getElementById("acquisition-price-value");
+				var selectedWork = null;
+				var lastOpener = null;
+				if (!dialog || !form) return;
+
+				function currentLang() {
+					return document.documentElement.lang === "en" ? "en" : "es";
+				}
+
+				function dict() {
+					return window.INK_CURRENT_DICT || {};
+				}
+
+				function text(key, fallback) {
+					var value = dict()[key];
+					return value || fallback;
+				}
+
+				function pick(value, lang) {
+					if (value && typeof value === "object") {
+						return value[lang] || value.es || value.en || "";
+					}
+					return value || "";
+				}
+
+				function workLabel(work, lang) {
+					if (!work) return "";
+					var parts = [pick(work.title, lang)];
+					var medium = pick(work.medium, lang);
+					var dimensions = pick(work.dimensions, lang);
+					if (medium) parts.push(medium);
+					if (dimensions) parts.push(dimensions);
+					return parts.filter(Boolean).join(" · ");
+				}
+
+				function priceLabel(work, lang) {
+					var price = work && pick(work.price, lang);
+					return price || text("acquisition_price_value", lang === "en" ? "On request" : "A consultar");
+				}
+
+				function refreshSummary() {
+					if (!selectedWork) return;
+					var lang = currentLang();
+					if (workLabelEl) workLabelEl.textContent = workLabel(selectedWork, lang);
+					if (priceEl) priceEl.textContent = priceLabel(selectedWork, lang);
+				}
+
+				function focusOpener() {
+					if (lastOpener && typeof lastOpener.focus === "function") lastOpener.focus();
+				}
+
+				function openDialog(index, opener) {
+					var works = window.WORKS || [];
+					selectedWork = works[index] || null;
+					if (!selectedWork) return;
+					lastOpener = opener || null;
+					form.reset();
+					if (statusEl) statusEl.textContent = "";
+					refreshSummary();
+					if (typeof dialog.showModal === "function") {
+						dialog.showModal();
+					} else {
+						dialog.setAttribute("open", "");
+					}
+					var first = form.querySelector('input[name="name"]');
+					if (first) first.focus();
+				}
+
+				function closeDialog() {
+					if (typeof dialog.close === "function") {
+						dialog.close();
+					} else {
+						dialog.removeAttribute("open");
+					}
+					focusOpener();
+				}
+
+				document.addEventListener("ink:acquire", function (event) {
+					var detail = event.detail || {};
+					openDialog(detail.index, detail.opener);
+				});
+				if (closeBtn) closeBtn.addEventListener("click", closeDialog);
+				if (cancelBtn) cancelBtn.addEventListener("click", closeDialog);
+				dialog.addEventListener("click", function (event) {
+					if (event.target === dialog) closeDialog();
+				});
+				dialog.addEventListener("close", focusOpener);
+				new MutationObserver(refreshSummary).observe(document.documentElement, {
+					attributes: true,
+					attributeFilter: ["lang"]
+				});
+
+				form.addEventListener("submit", function (event) {
+					event.preventDefault();
+					var honeypot = form.querySelector('[name="botcheck"]');
+					if (honeypot && honeypot.checked) return;
+					var lang = currentLang();
+					if (!selectedWork) {
+						if (statusEl) {
+							statusEl.textContent = text("acquisition_invalid", lang === "en" ? "Please choose a work first." : "Elegí una obra primero.");
+						}
+						return;
+					}
+					if (!form.checkValidity()) {
+						if (statusEl) {
+							statusEl.textContent = text("acquisition_invalid", lang === "en" ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						}
+						var invalid = form.querySelector(":invalid");
+						if (invalid) invalid.focus();
+						return;
+					}
+
+					var F = window.INK_FORMS || {};
+					var clean = F.cleanText || function (value, maxLength) { return String(value == null ? "" : value).trim().slice(0, maxLength || 0); };
+					var cleanEmail = F.cleanEmail || function (value) { return clean(value, 254).replace(/\s+/g, ""); };
+					var isEmail = F.isEmail || function (value) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value); };
+
+					var emailInput = form.elements["email"];
+					var emailValue = cleanEmail(emailInput ? emailInput.value : "");
+					if (!isEmail(emailValue)) {
+						if (statusEl) {
+							statusEl.textContent = text("acquisition_invalid", lang === "en" ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						}
+						if (emailInput) emailInput.focus();
+						return;
+					}
+					if (emailInput) emailInput.value = emailValue;
+
+					var work = selectedWork;
+					var workTitle = pick(work.title, lang) || (lang === "en" ? "Work" : "Obra");
+					var workValue = clean(workLabel(work, lang), 300, false);
+					var workPrice = priceLabel(work, lang);
+					var workInput = form.elements["work"];
+					if (workInput) workInput.value = workValue;
+
+					var delivery = form.elements["delivery"];
+					var deliveryValue = "";
+					if (delivery && delivery.value && delivery.selectedOptions && delivery.selectedOptions[0]) {
+						deliveryValue = clean(delivery.selectedOptions[0].textContent, 80, false);
+					}
+
+					var lines = [
+						lang === "en" ? "Hello," : "Hola,",
+						"",
+						lang === "en" ? "I would like to ask about this work:" : "Quiero consultar por esta obra:",
+						"",
+						lang === "en" ? "Inquiry details:" : "Datos de la consulta:",
+						"· " + text("acquisition_work_label", lang === "en" ? "Work" : "Obra") + ": " + workValue,
+						"· " + text("acquisition_price_label", lang === "en" ? "Price" : "Precio") + ": " + workPrice
+					];
+					[
+						["name", "book_name", lang === "en" ? "Name" : "Nombre", 80],
+						["email", "book_email", "Email", 254],
+						["country", "acquisition_country", lang === "en" ? "Country and city" : "País y ciudad", 100]
+					].forEach(function (field) {
+						var input = form.elements[field[0]];
+						var value = input ? clean(input.value, field[3], false) : "";
+						if (input) input.value = value;
+						if (value) {
+							lines.push("· " + text(field[1], field[2]) + ": " + value);
+						}
+					});
+					var nameValue = form.elements["name"] ? form.elements["name"].value : "";
+					var countryValue = form.elements["country"] ? form.elements["country"].value : "";
+					var missingField = !nameValue ? form.elements["name"] : (!countryValue ? form.elements["country"] : (!deliveryValue ? delivery : null));
+					if (missingField) {
+						if (statusEl) {
+							statusEl.textContent = text("acquisition_invalid", lang === "en" ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						}
+						missingField.focus();
+						return;
+					}
+					if (deliveryValue) {
+						lines.push("· " + text("acquisition_delivery", lang === "en" ? "Delivery" : "Entrega") + ": " + deliveryValue);
+					}
+					var message = form.elements["message"];
+					var messageValue = message ? clean(message.value, 1500, true) : "";
+					if (message) message.value = messageValue;
+					if (messageValue) {
+						lines.push("· " + text("acquisition_message", lang === "en" ? "Inquiry or shipping instructions" : "Consulta o instrucciones de envío") + ": " + messageValue);
+					}
+					lines.push("", lang === "en" ? "Thank you." : "Gracias.");
+
+					var subject = (lang === "en" ? "Inquiry" : "Consulta") + " — " + workTitle + " — The Ink Engine";
+					var submitBtn = form.querySelector('button[type="submit"]');
+					var originalLabel = submitBtn ? submitBtn.textContent : "";
+					var accessKey = (window.INK_CONFIG || {}).web3formsKey;
+
+					function setBusy(busy) {
+						if (!submitBtn) return;
+						submitBtn.disabled = busy;
+						submitBtn.textContent = busy ? text("book_sending", lang === "en" ? "Sending…" : "Enviando…") : originalLabel;
+					}
+
+					if (!accessKey) {
+						if (statusEl) {
+							statusEl.textContent = text("book_mailto", lang === "en" ? "Opening your email app…" : "Abriendo tu aplicación de correo…");
+						}
+						window.location.href = "mailto:theinkengine@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\r\n"));
+						return;
+					}
+
+					if (statusEl) statusEl.textContent = text("book_sending", lang === "en" ? "Sending…" : "Enviando…");
+					setBusy(true);
+
+					fetch("https://api.web3forms.com/submit", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+							"Accept": "application/json"
+						},
+						body: JSON.stringify({
+							access_key: accessKey,
+							subject: subject,
+							from_name: "The Ink Engine",
+							replyto: emailValue,
+							name: (form.elements["name"] || {}).value || "",
+							email: emailValue,
+							country: (form.elements["country"] || {}).value || "",
+							delivery: deliveryValue,
+							work: workValue,
+							price: workPrice,
+							message: lines.join("\n")
+						})
+					}).then(function (response) {
+						return response.json();
+					}).then(function (data) {
+						if (!data || !data.success) {
+							throw new Error((data && data.message) || "send failed");
+						}
+						form.reset();
+						if (statusEl) {
+							statusEl.textContent = text("book_success", lang === "en" ? "Done. Your message arrived; I'll reply to your email." : "Listo. Tu mensaje llegó; te respondo a tu correo.");
+						}
+					}).catch(function () {
+						if (statusEl) {
+							statusEl.textContent = text("book_error", lang === "en" ? "Could not send. Please try again or email theinkengine@gmail.com." : "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com.");
+						}
+					}).then(function () {
+						setBusy(false);
+					});
+				});
+			})();
+		</script>
+	</body>
+</html>

@@ -1,22 +1,23 @@
 # The Ink Engine — índice operativo del sitio
 
 > Leer este archivo primero. Abrir después solo el archivo o la sección citada.
-> Última actualización: 2026-11-01 · Rama: `dev` · Bilingüe ES/EN y Diario (`blog/`) funcionando en local y HTTP.
+> Última actualización: 2026-11-10 · Rama: `dev` · Bilingüe ES/EN, Diario (`blog/`) y Galería (`gallery.html`) funcionando en local y HTTP.
 
 ## 1. Repo y estado
 
-- Ruta local: `C:\Users\Leo\repositorios\theinkengine.github.io`
-- Origen de referencia: `C:\Users\Leo\WebArtSupport\theinkengine.github.io` (rama `main`)
+- Repo: `theinkengine/theinkengine.github.io` en GitHub.
+- Origen de referencia: copia local del sitio en la rama `main`.
 - Stack: HTML + CSS + JS estático, GitHub Pages, sin build.
 - Dominio: `theinkengine.art` (`CNAME`).
-- Estado: **landing + programa + diario**. `index.html` contiene todo el sitio; `programa.html` es el temario de clases enlazado desde la sección Classes; `blog/` es el Diario/Journal con portada, índice de entradas fechadas y lectura individual. Portada/hero y contacto/banner aprobados; el resto de imágenes está pendiente de sustituir.
+- Estado: **landing + galería + programa + diario**. `index.html` contiene la landing (obra, estudio, series, híbrido, clases, encargos, contacto); `gallery.html` es la galería independiente con portada y 2 obras (Faro y Saliendo a pescar); `program.html` es el temario de clases enlazado desde la sección Classes; `blog/` es el Diario/Journal con portada, índice de entradas fechadas y lectura individual. Portada/hero y contacto/banner aprobados; el resto de imágenes está pendiente de sustituir.
 
 ## 1.1 Páginas
 
 | Archivo | Uso |
 |---|---|
-| `index.html` | Landing completa (obra, galería, series, clases, encargos, contacto) |
-| `programa.html` | Temario breve de 9 clases, enlazado desde Classes y CTA |
+| `index.html` | Landing (obra, estudio, series, híbrido, clases, encargos, contacto; sin galería) |
+| `gallery.html` | Galería independiente: portada, 2 obras (Faro y Saliendo a pescar) desde `works-data.js`, lightbox y consulta de precio por obra |
+| `program.html` | Temario breve de 9 clases, enlazado desde Classes y CTA |
 | `blog/index.html` | Portada y índice del Diario/Journal; pinta las tarjetas desde `blog.js` |
 | `blog/AAAA-MM-DD-slug.html` | Entrada independiente: fecha, título, imagen, 2–3 párrafos y reflexión |
 - Sistema bilingüe: `translations.json` (fuente) + `translations.js` (`window.INK_TRANSLATIONS`, permite `file://`) + `lang.js` (aplica `data-i18n`, `data-i18n-aria-label`, `data-i18n-content`, `data-i18n-alt`; guarda `ink_lang` en localStorage).
@@ -37,24 +38,23 @@
 |---|---|---|---|
 | — | — | Hero | Vídeo de portada + titular “The weight of iron, held in water.” |
 | — | — | Statement | “First the line. Then the weather.” |
-| 01 | `#work` | The work | Split 4:3 con `work-02` |
-| 02 | `#selected` | Gallery | 20 obras desde `works-data.js` + lightbox |
-| 03 | `#studio` | The studio | Split 4:5 con `work-01` |
+| 01 | `#work` | The work | Split con `images/20260131_184732.jpg` |
+| 03 | `#studio` | The studio | Split 4:5 con `images/pic06_thumb.jpg` |
 | — | — | Marquee | Banda tipográfica decorativa |
 | 04 | `#series` | Series | Air Tug, Heavyweight, Clockwork Heart (texto + paleta) |
 | 05 | `#hybrid` | Hybrid | Pintura clásica con retoque digital y lienzo potenciado (trama, tensión, barniz); 3 placas + 2 films verticales provisionales |
-| 06 | `#classes` | Classes | Split 4:5 con `work-06` |
-| 07 | `#commissions` | Commissions | Split 4:5 con `work-08` |
+| 06 | `#classes` | Classes | Split con `images/works/faro-1600.jpg` |
+| 07 | `#commissions` | Commissions | Split 4:5 con `images/mockuptest2a2.png` |
 | — | — | CTA | “Paper first. Then pixels.” |
-| — | `#newsletter` | Newsletter | Fondo `work-10` + formulario `mailto:` |
+| — | `#newsletter` | Newsletter | Fondo `faro-square-1440.webp` + formulario `mailto:` |
 | — | — | Principios | 3 citas de estudio |
-| — | — | Banner | `work-09` a sangre (asociado a contacto) |
+| — | — | Banner | `images/20250920_211401.jpg` a sangre (asociado a contacto) |
 | — | `#contact` | Contact | Email del estudio |
 | — | — | Footer | Instagram, Pinterest, copyright |
 
 ## 3. CSS
 
-- Base: `assets/css/site.css` (~1.577 líneas); `assets/css/blog.css` para el diario.
+- Base: `assets/css/site.css` (~1.577 líneas); `assets/css/blog.css` para el diario; `assets/css/gallery.css` para la portada de la galería.
 - Tokens: `--paper #ffffff`, `--ink #121212`, `--gold #b58a4e`, `--charcoal #2e2e33`, `--container 1747px`.
 - Tipografía: `Cinzel` (display) + `Source Sans 3` (texto).
 - Clases clave: `.site-head`, `.hero`, `.split`, `.split--reverse`, `.split__media--wide`, `.works-grid`, `.works-lightbox`, `.series-stack`, `.feature`, `.palette`, `.banner`, `.newsletter`, `.contact`.
@@ -120,7 +120,7 @@ Opcional para no recortar obra: `images/sections/classes.jpg`, `commissions.jpg`
 
 ## 6. Conocimiento (pseudo-RAG)
 
-Base: `C:\Users\Leo\.config\opencode\knowledge`
+Base: base de conocimiento local de opencode (fuera del repo).
 
 | Tema | Archivo |
 |---|---|
@@ -141,13 +141,13 @@ Base: `C:\Users\Leo\.config\opencode\knowledge`
 ## 8. QA y entorno (Windows)
 
 - Servidor local: `python -m http.server 8899` dentro del repo.
-- Comprobar que la galería no pinta obras (no hay `#works-grid`); si se reactiva, contar `class="work"` (deben ser 20).
+- Galería: `#works-grid` debe pintar 2 obras desde `works-data.js`; el botón de cada obra debe abrir el diálogo con la obra y el precio “A consultar”.
 - Diario: `blog/index.html` debe pintar N tarjetas desde `blog.js` y la portada debe cargar; ES↔EN debe cambiar title, nav, alt y textos; la entrada debe mostrar imagen, reflexión y volver al índice.
 - Programa: comprobar que el script inline se ejecuta (no aparece código crudo al final) y que ES↔EN cambia el h1.
 - Capturas por sección: CDP con `Runtime.evaluate` + `scrollBehavior='auto'`.
-- Chrome: `C:\Program Files\Google\Chrome\Application\chrome.exe`.
+- Chrome: instalación local de Chrome.
 - `Remove-Item` está denegado: borrar con `node -e "fs.unlinkSync(...)"`.
-- Capturas y artefactos: `C:\Users\Leo\.local\share\opencode\tool-output`.
+- Capturas y artefactos: carpeta temporal local de opencode.
 
 ## 9. Archivos retirados
 
@@ -155,4 +155,4 @@ Base: `C:\Users\Leo\.config\opencode\knowledge`
 
 Assets Helios: `assets/css/main.css`, `noscript.css`, `fontawesome-all.min.css`, `assets/css/images/`, `assets/sass/`, `assets/webfonts/`, `assets/js/jquery*.js`, `main.js`, `util.js`, `breakpoints.min.js`, `browser.min.js`, `_preview-home-*.png`.
 
-El contenido de las series se consolidó en `index.html`; el de clases, en `programa.html`.
+El contenido de las series se consolidó en `index.html`; el de clases, en `program.html`.

@@ -15,7 +15,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
-		<link rel="stylesheet" href="assets/css/site.css" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261111b" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<link rel="stylesheet" href="assets/css/privateclasses.css?v=20261109f" />
 		<!-- Google tag (gtag.js) -->
@@ -35,11 +35,11 @@
 				<a class="brand" href="index.html">The Ink Engine</a>
 				<nav class="site-nav" aria-label="Principal" data-i18n-aria-label="nav_aria">
 					<a href="index.html#work" data-i18n="nav_work">Obra</a>
-					<a href="index.html#selected" data-i18n="nav_gallery">Galería</a>
+					<a href="gallery.html" data-i18n="nav_gallery">Galería</a>
 					<a href="index.html#series" data-i18n="nav_series">Series</a>
 					<a href="index.html#hybrid" data-i18n="nav_hybrid">Híbrido</a>
 					<a href="privateclasses.html" aria-current="page" data-i18n="nav_classes">Clases</a>
-					<a href="index.html#commissions" data-i18n="nav_commissions">Encargos</a>
+					<a href="commissions.html" data-i18n="nav_commissions">Encargos</a>
 					<a href="index.html#contact" data-i18n="nav_contact">Contacto</a>
 					<a href="blog/index.html" data-i18n="nav_journal">Diario</a>
 					<div class="lang-switcher" role="group" aria-label="Idioma / Language">
@@ -285,22 +285,22 @@
 					<p class="book-form__option"><span data-i18n="book_option">Opción</span>: <strong class="book-option-label" id="book-option-label">&mdash;</strong></p>
 				</div>
 				<input type="hidden" name="option" id="book-option" />
-				<input type="checkbox" name="botcheck" id="book-botcheck" class="book-honeypot" tabindex="-1" autocomplete="off" />
+				<input type="checkbox" name="botcheck" id="book-botcheck" class="book-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
 				<label class="book-field">
 					<span data-i18n="book_name">Nombre</span>
-					<input type="text" name="name" autocomplete="name" required />
+					<input type="text" name="name" autocomplete="name" maxlength="80" minlength="2" required />
 				</label>
 				<label class="book-field">
 					<span data-i18n="book_email">Email</span>
-					<input type="email" name="email" autocomplete="email" required />
+					<input type="email" name="email" autocomplete="email" maxlength="254" required />
 				</label>
 				<label class="book-field">
 					<span data-i18n="book_country">País y zona horaria</span>
-					<input type="text" name="country" autocomplete="country-name" />
+					<input type="text" name="country" autocomplete="country-name" maxlength="100" required aria-required="true" />
 				</label>
 				<label class="book-field">
 					<span data-i18n="book_level">Nivel</span>
-					<select name="level">
+					<select name="level" required aria-required="true">
 						<option value="" data-i18n="book_level_0">Elegí una opción</option>
 						<option value="Sin experiencia" data-i18n="book_level_1">Sin experiencia</option>
 						<option value="Principiante" data-i18n="book_level_2">Principiante</option>
@@ -310,11 +310,11 @@
 				</label>
 				<label class="book-field book-field--full">
 					<span data-i18n="book_interest">Qué te gustaría pintar o dibujar</span>
-					<textarea name="interest" rows="2"></textarea>
+					<textarea name="interest" rows="2" maxlength="1500"></textarea>
 				</label>
 				<label class="book-field book-field--full">
 					<span data-i18n="book_schedule">Días y horarios preferidos</span>
-					<textarea name="schedule" rows="2"></textarea>
+					<textarea name="schedule" rows="2" maxlength="1000"></textarea>
 				</label>
 				<div class="book-form__actions">
 					<button type="submit" class="button button--solid" id="book-submit" data-i18n="book_submit">Enviar reserva</button>
@@ -333,11 +333,13 @@
 					<a href="https://www.instagram.com/theinkengine/">Instagram</a>
 					<a href="https://ar.pinterest.com/theinkengine/">Pinterest</a>
 				</p>
+				<p class="foot-disclaimer" data-i18n="footer_disclaimer">Los colores, el contraste y la textura pueden variar según la pantalla y la calibración de cada dispositivo. Las fotografías buscan reflejar la obra con la mayor fidelidad posible.</p>
 				<p class="fine">&copy; <span id="year">2026</span> The Ink Engine &middot; Diseño: The Ink Engine</p>
 			</div>
 		</footer>
 
-		<script src="assets/data/translations.js?v=20261109i"></script>
+		<script src="assets/js/form-utils.js?v=20261111a"></script>
+		<script src="assets/data/translations.js?v=20261111f"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
 		<script src="assets/js/site-config.js?v=20261109b"></script>
 
@@ -510,9 +512,35 @@
 							form.reportValidity();
 							return;
 						}
-						var data = {};
-						new FormData(form).forEach(function (value, key) { data[key] = value; });
-						if (data.botcheck) return;
+						var honeypot = form.elements["botcheck"];
+						if (honeypot && honeypot.checked) return;
+
+						var F = window.INK_FORMS || {};
+						var clean = F.cleanText || function (value, maxLength) { return String(value == null ? "" : value).trim().slice(0, maxLength || 0); };
+						var cleanEmail = F.cleanEmail || function (value) { return clean(value, 254).replace(/\s+/g, ""); };
+						var isEmail = F.isEmail || function (value) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value); };
+
+						var data = {
+							name: clean(form.elements["name"] ? form.elements["name"].value : "", 80, false),
+							email: cleanEmail(form.elements["email"] ? form.elements["email"].value : ""),
+							country: clean(form.elements["country"] ? form.elements["country"].value : "", 100, false),
+							level: clean(form.elements["level"] ? form.elements["level"].value : "", 40, false),
+							interest: clean(form.elements["interest"] ? form.elements["interest"].value : "", 1500, true),
+							schedule: clean(form.elements["schedule"] ? form.elements["schedule"].value : "", 1000, true),
+							option: clean(optionInput ? optionInput.value : "", 100, false)
+						};
+						if (!isEmail(data.email)) {
+							form.reportValidity();
+							return;
+						}
+						["name", "email", "country", "interest", "schedule"].forEach(function (field) {
+							if (form.elements[field]) form.elements[field].value = data[field];
+						});
+						if (optionInput) optionInput.value = data.option;
+						if (!form.checkValidity()) {
+							form.reportValidity();
+							return;
+						}
 
 						var key = (window.INK_CONFIG || {}).web3formsKey;
 						if (!key) {

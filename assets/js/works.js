@@ -8,77 +8,126 @@
 	if (yearEl) { yearEl.textContent = String(new Date().getFullYear()); }
 	if (!grid || !dialog || !works.length) { return; }
 
+	if (works.length === 1) { grid.classList.add("works-grid--single"); }
+
 	var img = dialog.querySelector("img");
 	var caption = dialog.querySelector("figcaption");
 	var counter = dialog.querySelector(".counter");
 	var current = 0;
 	var trigger = null;
 
+	function currentLang() {
+		return document.documentElement.lang === "en" ? "en" : "es";
+	}
+
+	function pick(value, lang) {
+		if (value && typeof value === "object") {
+			return value[lang] || value.es || value.en || "";
+		}
+		return value || "";
+	}
+
 	function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+	function dict(key, fallback) {
+		var value = (window.INK_CURRENT_DICT || {})[key];
+		return value || fallback;
+	}
 
 	function srcset(base) {
 		return base + "-480.webp 480w, " + base + "-960.webp 960w, " + base + "-1440.webp 1440w";
 	}
 
-	works.forEach(function (work, index) {
-		var figure = document.createElement("figure");
-		var link = document.createElement("a");
-		var picture = document.createElement("picture");
-		var source = document.createElement("source");
-		var image = document.createElement("img");
-		var cap = document.createElement("figcaption");
-		var num = document.createElement("span");
-		var title = document.createElement("span");
-
-		link.href = work.src + "-1440.webp";
-		link.className = "work";
-		link.dataset.index = String(index);
-		link.setAttribute("aria-label", "Open " + work.title);
-
-		source.type = "image/webp";
-		source.srcset = srcset(work.src);
-		source.sizes = "(max-width: 759px) 100vw, 47vw";
-
-		image.src = work.src + "-960.jpg";
-		image.alt = work.alt;
-		image.width = work.w;
-		image.height = work.h;
-		image.loading = index === 0 ? "eager" : "lazy";
-		image.decoding = "async";
-		if (index === 0) { image.fetchPriority = "high"; }
-
-		num.className = "num";
-		num.textContent = pad(index + 1);
-		title.className = "title";
-		title.textContent = work.title;
-
-		cap.appendChild(num);
-		cap.appendChild(title);
-		if (work.year) {
-			var year = document.createElement("span");
-			year.className = "year";
-			year.textContent = work.year;
-			cap.appendChild(year);
+	function detailsFor(work, lang, extended) {
+		var parts = [pick(work.medium, lang), pick(work.dimensions, lang)];
+		if (extended) {
+			parts.push(pick(work.paper, lang));
+			parts.push(work.year);
 		}
+		return parts.filter(Boolean).join(" · ");
+	}
 
-		picture.appendChild(source);
-		picture.appendChild(image);
-		link.appendChild(picture);
-		figure.appendChild(link);
-		figure.appendChild(cap);
-		grid.appendChild(figure);
-	});
+	function buildGrid() {
+		var lang = currentLang();
+		grid.innerHTML = "";
+		works.forEach(function (work, index) {
+			var figure = document.createElement("figure");
+			var link = document.createElement("a");
+			var picture = document.createElement("picture");
+			var source = document.createElement("source");
+			var image = document.createElement("img");
+			var cap = document.createElement("figcaption");
+			var num = document.createElement("span");
+			var title = document.createElement("span");
+
+			link.href = work.src + "-1440.webp";
+			link.className = "work";
+			link.dataset.index = String(index);
+			link.setAttribute("aria-label", (lang === "en" ? "Open " : "Abrir ") + pick(work.title, lang));
+
+			source.type = "image/webp";
+			source.srcset = srcset(work.src);
+			source.sizes = works.length === 1 ? "(max-width: 759px) 100vw, 960px" : "(max-width: 759px) 100vw, 47vw";
+
+			image.src = work.src + "-960.jpg";
+			image.alt = pick(work.alt, lang);
+			image.width = work.w;
+			image.height = work.h;
+			image.loading = index === 0 ? "eager" : "lazy";
+			image.decoding = "async";
+			if (index === 0) { image.fetchPriority = "high"; }
+
+			num.className = "num";
+			num.textContent = pad(index + 1);
+			title.className = "title";
+			title.textContent = pick(work.title, lang);
+
+			cap.appendChild(num);
+			cap.appendChild(title);
+			if (work.year) {
+				var year = document.createElement("span");
+				year.className = "year";
+				year.textContent = work.year;
+				cap.appendChild(year);
+			}
+
+			var detailsText = detailsFor(work, lang, false);
+			if (detailsText) {
+				var details = document.createElement("span");
+				details.className = "meta";
+				details.textContent = detailsText;
+				cap.appendChild(details);
+			}
+
+			var acquire = document.createElement("button");
+			acquire.type = "button";
+			acquire.className = "work-acquire";
+			acquire.dataset.index = String(index);
+			acquire.setAttribute("aria-haspopup", "dialog");
+			acquire.textContent = dict("gallery_cta", lang === "en" ? "Ask about price" : "Consultar precio");
+			cap.appendChild(acquire);
+
+			picture.appendChild(source);
+			picture.appendChild(image);
+			link.appendChild(picture);
+			figure.appendChild(link);
+			figure.appendChild(cap);
+			grid.appendChild(figure);
+		});
+	}
 
 	function render(index) {
 		current = (index + works.length) % works.length;
 		var work = works[current];
+		var lang = currentLang();
 		img.src = work.src + "-1440.webp";
-		img.alt = work.alt;
+		img.alt = pick(work.alt, lang);
 		img.width = work.w;
 		img.height = work.h;
-		caption.textContent = work.title;
+		caption.textContent = pick(work.title, lang);
 		var meta = document.createElement("span");
-		meta.textContent = "Watercolor and ink on paper" + (work.year ? " · " + work.year : "");
+		meta.className = "meta";
+		meta.textContent = detailsFor(work, lang, true);
 		caption.appendChild(meta);
 		counter.textContent = pad(current + 1) + " / " + pad(works.length);
 	}
@@ -90,7 +139,21 @@
 		else { dialog.setAttribute("open", ""); }
 	}
 
+	function openAcquisition(index, opener) {
+		var work = works[index];
+		if (!work) { return; }
+		document.dispatchEvent(new CustomEvent("ink:acquire", {
+			detail: { index: index, work: work, opener: opener }
+		}));
+	}
+
 	grid.addEventListener("click", function (event) {
+		var acquire = event.target.closest("button.work-acquire");
+		if (acquire) {
+			event.preventDefault();
+			openAcquisition(Number(acquire.dataset.index), acquire);
+			return;
+		}
 		var link = event.target.closest("a.work");
 		if (!link) { return; }
 		event.preventDefault();
@@ -113,4 +176,15 @@
 	dialog.addEventListener("close", function () {
 		if (trigger) { trigger.focus(); }
 	});
+
+	var lastLang = currentLang();
+	buildGrid();
+
+	new MutationObserver(function () {
+		var lang = currentLang();
+		if (lang === lastLang) { return; }
+		lastLang = lang;
+		buildGrid();
+		if (dialog.open) { render(current); }
+	}).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
 })();
