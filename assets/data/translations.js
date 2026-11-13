@@ -451,7 +451,11 @@ window.INK_TRANSLATIONS = {
 		"book_mailto": "Abriendo tu aplicación de correo…",
 		"acquisition_price_label": "Precio",
 		"acquisition_price_value": "A consultar",
-		"acquisition_price_note": "Te respondo en 24 h con el precio final, el envío y las formas de pago."
+		"acquisition_price_note": "Te respondo en 24 h con el precio final, el envío y las formas de pago.",
+		"gallery_more_photos": "¿Querés verla mejor antes de decidir? Escribime y te mando más fotos de la obra que te interesa: detalles de cerca, el reverso, otra luz o una toma nueva. Quiero que la veas bien y que elijas con seguridad.",
+		"commissions_more_photos": "¿No te decidís por una referencia? Escribime y te mando más obras, detalles o nuevas tomas para que veas de cerca cómo trabajo antes de encargar.",
+		"lightbox_more_photos": "¿Necesitás verla mejor? Escribime y te mando más fotos: detalles, el reverso o una toma nueva. Quiero que la veas bien antes de decidir.",
+		"acquisition_more_photos": "Antes de decidir, puedo enviarte más fotos o una toma nueva de esta obra: detalles, el reverso, otra luz. Pedímelo en el mensaje y te lo mando."
 	},
 	"en": {
 		"nav_work": "Work",
@@ -905,6 +909,10 @@ window.INK_TRANSLATIONS = {
 		"book_mailto": "Opening your email app…",
 		"acquisition_price_label": "Price",
 		"acquisition_price_value": "On request",
-		"acquisition_price_note": "I'll reply within 24 h with the final price, shipping options and payment methods."
+		"acquisition_price_note": "I'll reply within 24 h with the final price, shipping options and payment methods.",
+		"gallery_more_photos": "Want a closer look before you decide? Write to me and I'll send more photos of the piece you're considering: close-up details, the back, different light, or a fresh shot. I want you to see it properly and choose with confidence.",
+		"commissions_more_photos": "Not sure about a reference? Write to me and I'll send more works, details, or fresh shots so you can see my work up close before commissioning.",
+		"lightbox_more_photos": "Need a closer look? Write to me and I'll send more photos—details, the back, or a fresh shot. I want you to see it properly before you decide.",
+		"acquisition_more_photos": "Before you decide, I can send more photos or a fresh shot of this piece: details, the back, different light. Ask in your message and I'll send them."
 	}
-};
+};

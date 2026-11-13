@@ -2,6 +2,7 @@
 	"use strict";
 
 	var works = window.WORKS || [];
+	var ASSET_V = "20261112f";
 	var grid = document.getElementById("works-grid");
 	var dialog = document.getElementById("works-lightbox");
 	var yearEl = document.getElementById("year");
@@ -34,8 +35,10 @@
 		return value || fallback;
 	}
 
+	function asset(url) { return url + "?v=" + ASSET_V; }
+
 	function srcset(base) {
-		return base + "-480.webp 480w, " + base + "-960.webp 960w, " + base + "-1440.webp 1440w";
+		return asset(base + "-480.webp") + " 480w, " + asset(base + "-960.webp") + " 960w, " + asset(base + "-1440.webp") + " 1440w";
 	}
 
 	function detailsFor(work, lang, extended) {
@@ -60,7 +63,7 @@
 			var num = document.createElement("span");
 			var title = document.createElement("span");
 
-			link.href = work.src + "-1440.webp";
+			link.href = asset(work.src + "-1440.webp");
 			link.className = "work";
 			link.dataset.index = String(index);
 			link.setAttribute("aria-label", (lang === "en" ? "Open " : "Abrir ") + pick(work.title, lang));
@@ -69,7 +72,7 @@
 			source.srcset = srcset(work.src);
 			source.sizes = works.length === 1 ? "(max-width: 759px) 100vw, 960px" : "(max-width: 759px) 100vw, 47vw";
 
-			image.src = work.src + "-960.jpg";
+			image.src = asset(work.src + "-960.jpg");
 			image.alt = pick(work.alt, lang);
 			image.width = work.w;
 			image.height = work.h;
@@ -120,7 +123,7 @@
 		current = (index + works.length) % works.length;
 		var work = works[current];
 		var lang = currentLang();
-		img.src = work.src + "-1440.webp";
+		img.src = asset(work.src + "-1440.webp");
 		img.alt = pick(work.alt, lang);
 		img.width = work.w;
 		img.height = work.h;

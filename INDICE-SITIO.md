@@ -9,14 +9,14 @@
 - Origen de referencia: copia local del sitio en la rama `main`.
 - Stack: HTML + CSS + JS estático, GitHub Pages, sin build.
 - Dominio: `theinkengine.art` (`CNAME`).
-- Estado: **landing + galería + programa + diario**. `index.html` contiene la landing (obra, estudio, series, híbrido, clases, encargos, contacto); `gallery.html` es la galería independiente con portada y 2 obras (Faro y Saliendo a pescar); `program.html` es el temario de clases enlazado desde la sección Classes; `blog/` es el Diario/Journal con portada, índice de entradas fechadas y lectura individual. Portada/hero y contacto/banner aprobados; el resto de imágenes está pendiente de sustituir.
+- Estado: **landing + galería + programa + diario**. `index.html` contiene la landing (obra, estudio, series, híbrido, clases, encargos, contacto); `gallery.html` es la galería independiente con portada y 22 obras (20 numeradas provisionales + Faro y Saliendo a pescar); `program.html` es el temario de clases enlazado desde la sección Classes; `blog/` es el Diario/Journal con portada, índice de entradas fechadas y lectura individual. Portada/hero y contacto/banner aprobados; el resto de imágenes está pendiente de sustituir.
 
 ## 1.1 Páginas
 
 | Archivo | Uso |
 |---|---|
 | `index.html` | Landing (obra, estudio, series, híbrido, clases, encargos, contacto; sin galería) |
-| `gallery.html` | Galería independiente: portada, 2 obras (Faro y Saliendo a pescar) desde `works-data.js`, lightbox y consulta de precio por obra |
+| `gallery.html` | Galería independiente: portada y 22 obras (20 numeradas provisionales + Faro y Saliendo a pescar) desde `works-data.js`, lightbox y consulta de precio por obra |
 | `program.html` | Temario breve de 9 clases, enlazado desde Classes y CTA |
 | `blog/index.html` | Portada y índice del Diario/Journal; pinta las tarjetas desde `blog.js` |
 | `blog/AAAA-MM-DD-slug.html` | Entrada independiente: fecha, título, imagen, 2–3 párrafos y reflexión |
@@ -66,7 +66,7 @@
 
 ## 4. JavaScript
 
-- `assets/js/works-data.js`: array `window.WORKS` (20 obras) con `src`, `w`, `h`, `year`, `title`, `alt`, `source`.
+- `assets/js/works-data.js`: array `window.WORKS` (22 obras) con `src`, `w`, `h`, `year`, `title`, `alt`, `source`.
 - `assets/js/works.js`: construye `#works-grid`, gestiona `#works-lightbox` (prev/next/close/teclado) y usa variantes `-480/-960/-1440.webp` + `-960.jpg`.
 - `assets/data/blog.js`: array `window.INK_BLOG` con las entradas del diario (metadatos + rutas relativas a `blog/`).
 - `assets/js/blog.js`: pinta el índice del diario, marca la entrada única, año, header con scroll y reveal.
@@ -141,7 +141,7 @@ Base: base de conocimiento local de opencode (fuera del repo).
 ## 8. QA y entorno (Windows)
 
 - Servidor local: `python -m http.server 8899` dentro del repo.
-- Galería: `#works-grid` debe pintar 2 obras desde `works-data.js`; el botón de cada obra debe abrir el diálogo con la obra y el precio “A consultar”.
+- Galería: `#works-grid` debe pintar 22 obras desde `works-data.js`; el botón de cada obra debe abrir el diálogo con la obra y el precio “A consultar”.
 - Diario: `blog/index.html` debe pintar N tarjetas desde `blog.js` y la portada debe cargar; ES↔EN debe cambiar title, nav, alt y textos; la entrada debe mostrar imagen, reflexión y volver al índice.
 - Programa: comprobar que el script inline se ejecuta (no aparece código crudo al final) y que ES↔EN cambia el h1.
 - Capturas por sección: CDP con `Runtime.evaluate` + `scrollBehavior='auto'`.
