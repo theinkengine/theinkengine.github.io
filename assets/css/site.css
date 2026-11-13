@@ -1180,6 +1180,20 @@ body.has-hero .site-head[data-scrolled="true"] .site-nav a:hover {
 	color: rgba(255, 255, 255, 0.5);
 }
 
+.site-foot .site-foot__opencode {
+	font-size: 0.62rem;
+	letter-spacing: 0.04em;
+	color: rgba(255, 255, 255, 0.35);
+	text-align: center;
+	margin-top: 0.75rem;
+	line-height: 1.4;
+}
+
+.site-foot .site-foot__opencode a {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: underline;
+}
+
 .site-foot__byline {
 	display: inline-block;
 	margin-bottom: 0.5rem;
