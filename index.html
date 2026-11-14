@@ -14,7 +14,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
-		<link rel="stylesheet" href="assets/css/site.css?v=20261112g" />
+		<link rel="stylesheet" href="assets/css/site.css?v=20261114a" />
 		<link rel="stylesheet" href="assets/css/classes.css?v=20261109a" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<!-- Google tag (gtag.js) -->
@@ -364,7 +364,28 @@
 					<p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
 					<h2 data-i18n="contact_title">Escribe al estudio.</h2>
 					<p data-i18n="contact_p">Basta con un mensaje breve. Si te interesa una obra disponible, escribime para coordinar la adquisición. Si querés una pieza nueva, contame la referencia y hablamos del encargo.</p>
-					<a class="email" href="mailto:theinkengine@gmail.com">theinkengine@gmail.com</a>
+					<form class="contact-form" id="contact-form" novalidate>
+						<div class="contact-form__row">
+							<label class="contact-field">
+								<span data-i18n="contact_form_name">Nombre</span>
+								<input type="text" name="name" autocomplete="name" maxlength="80" minlength="2" required />
+							</label>
+							<label class="contact-field">
+								<span data-i18n="contact_form_email">Email</span>
+								<input type="email" name="email" autocomplete="email" maxlength="254" required />
+							</label>
+						</div>
+						<label class="contact-field contact-field--full">
+							<span data-i18n="contact_form_message">Mensaje</span>
+							<textarea name="message" rows="4" maxlength="2000" required></textarea>
+						</label>
+						<input type="checkbox" name="botcheck" id="contact-botcheck" class="book-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+						<div class="contact-form__actions">
+							<button type="submit" data-i18n="contact_form_submit">Enviar mensaje</button>
+						</div>
+						<p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+						<p class="contact-form__alt" data-i18n="contact_form_alt">O escribime directo a <a href="mailto:theinkengine@gmail.com">theinkengine@gmail.com</a>.</p>
+					</form>
 				</div>
 			</section>
 		</main>
@@ -376,15 +397,13 @@
 					<a href="https://www.instagram.com/theinkengine/">Instagram</a>
 					<a href="https://ar.pinterest.com/theinkengine/">Pinterest</a>
 				</p>
-				<p class="construction-notice" data-i18n="construction" style="margin: 1.5rem 0; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);">Sitio web en construcción</p>
 				<p class="foot-disclaimer" data-i18n="footer_disclaimer">Los colores, el contraste y la textura pueden variar según la pantalla y la calibración de cada dispositivo. Las fotografías buscan reflejar la obra con la mayor fidelidad posible.</p>
-				<p class="site-foot__opencode" data-i18n="footer_opencode"></p>
 				<p class="fine">&copy; <span id="year">2026</span> The Ink Engine &middot; <span data-i18n="design">Diseño: The Ink Engine</span></p>
 			</div>
 		</footer>
 
 		<script src="assets/js/form-utils.js?v=20261111a"></script>
-		<script src="assets/data/translations.js?v=20261112g"></script>
+		<script src="assets/data/translations.js?v=20261114a"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
 		<script src="assets/js/site-config.js?v=20261109b"></script>
 
@@ -480,6 +499,80 @@
 						if (status) { status.textContent = dict.news_error || "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com."; }
 					} finally {
 						if (submitBtn) submitBtn.disabled = false;
+					}
+				});
+			}
+
+			const contactForm = document.getElementById("contact-form");
+			const contactStatus = document.getElementById("contact-status");
+			if (contactForm) {
+				const contactSubmit = contactForm.querySelector('button[type="submit"]');
+				contactForm.addEventListener("submit", async (event) => {
+					event.preventDefault();
+					const d = window.INK_CURRENT_DICT || {};
+					const isEnglish = document.documentElement.lang === "en";
+					const F = window.INK_FORMS || {};
+					const cleanText = F.cleanText || ((value, max) => String(value == null ? "" : value).trim().slice(0, max || 0));
+					const cleanEmail = F.cleanEmail || ((value) => cleanText(value, 254).replace(/\s+/g, ""));
+					const isEmail = F.isEmail || ((value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value));
+
+					const honeypot = contactForm.querySelector('[name="botcheck"]');
+					if (honeypot && honeypot.checked) return;
+
+					const nameField = contactForm.elements["name"];
+					const emailField = contactForm.elements["email"];
+					const messageField = contactForm.elements["message"];
+					const name = cleanText(nameField ? nameField.value : "", 80);
+					const email = cleanEmail(emailField ? emailField.value : "");
+					const message = cleanText(messageField ? messageField.value : "", 2000, true);
+
+					if (nameField) nameField.value = name;
+					if (emailField) emailField.value = email;
+					if (messageField) messageField.value = message;
+
+					if (!name || !isEmail(email) || !message) {
+						if (contactStatus) contactStatus.textContent = d.contact_form_invalid || (isEnglish ? "Please check the required fields." : "Revisá los campos obligatorios.");
+						const invalid = !name ? nameField : (!isEmail(email) ? emailField : messageField);
+						if (invalid) invalid.focus();
+						return;
+					}
+
+					const subject = d.contact_form_subject || (isEnglish ? "Message from the site — The Ink Engine" : "Mensaje desde el sitio — The Ink Engine");
+					const key = (window.INK_CONFIG || {}).web3formsKey;
+
+					if (!key) {
+						if (contactStatus) contactStatus.textContent = d.book_mailto || (isEnglish ? "Opening your email app…" : "Abriendo tu aplicación de correo…");
+						const mailBody = name + " (" + email + ")\n\n" + message;
+						window.location.href = "mailto:theinkengine@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(mailBody);
+						return;
+					}
+
+					if (contactSubmit) contactSubmit.disabled = true;
+					if (contactStatus) contactStatus.textContent = d.contact_form_sending || (isEnglish ? "Sending…" : "Enviando…");
+					try {
+						const response = await fetch("https://api.web3forms.com/submit", {
+							method: "POST",
+							headers: { "Content-Type": "application/json", Accept: "application/json" },
+							body: JSON.stringify({
+								access_key: key,
+								subject: subject,
+								from_name: "The Ink Engine · Contacto",
+								replyto: email,
+								name: name,
+								email: email,
+								message: message,
+								language: isEnglish ? "en" : "es",
+								page: window.location.href
+							})
+						});
+						const result = await response.json();
+						if (!result || !result.success) throw new Error((result && result.message) || "error");
+						if (contactStatus) contactStatus.textContent = d.contact_form_success || (isEnglish ? "Done. Your message reached the studio." : "Listo. Tu mensaje llegó al estudio.");
+						contactForm.reset();
+					} catch (error) {
+						if (contactStatus) contactStatus.textContent = d.contact_form_error || (isEnglish ? "Could not send. Please try again or email theinkengine@gmail.com." : "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com.");
+					} finally {
+						if (contactSubmit) contactSubmit.disabled = false;
 					}
 				});
 			}

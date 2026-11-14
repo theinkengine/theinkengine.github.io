@@ -1121,6 +1121,105 @@ body.has-hero .site-head[data-scrolled="true"] .site-nav a:hover {
 	border-color: var(--gold);
 }
 
+/* Contact form */
+
+.contact-form {
+	max-width: 44rem;
+	margin: 2.75rem auto 0;
+	text-align: left;
+}
+
+.contact-form__row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem 2rem;
+}
+
+.contact-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.55rem;
+	flex: 1 1 200px;
+}
+
+.contact-field--full {
+	flex-basis: 100%;
+	margin-top: 1.4rem;
+}
+
+.contact-field span {
+	font-size: 0.62rem;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.58);
+}
+
+.contact-field input,
+.contact-field textarea {
+	width: 100%;
+	padding: 0.5rem 0;
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+	border-radius: 0;
+	color: #fff;
+	font-family: var(--font-body);
+	font-size: 1rem;
+	transition: border-color 0.3s ease;
+}
+
+.contact-field textarea {
+	min-height: 6.5rem;
+	resize: vertical;
+}
+
+.contact-field input:focus-visible,
+.contact-field textarea:focus-visible {
+	outline: none;
+	border-color: var(--gold);
+}
+
+.contact-form__actions {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.contact-form button {
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-form button:hover {
+	background: #fff;
+	color: var(--ink);
+	border-color: #fff;
+}
+
+.contact-form button:disabled {
+	opacity: 0.55;
+	cursor: default;
+}
+
+.contact .contact-form__alt {
+	margin: 1.6rem auto 0;
+	max-width: none;
+	font-size: 0.78rem;
+	letter-spacing: 0.02em;
+	color: rgba(255, 255, 255, 0.45);
+	text-align: center;
+}
+
+.contact .contact-form__alt a {
+	color: rgba(255, 255, 255, 0.8);
+	border-bottom: 1px solid var(--hair-light);
+	transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact .contact-form__alt a:hover {
+	color: var(--gold);
+	border-color: var(--gold);
+}
+
 /* Footer */
 
 .site-foot {
@@ -1140,8 +1239,9 @@ body.has-hero .site-head[data-scrolled="true"] .site-nav a:hover {
 
 .site-foot p {
 	margin: 0;
-	max-width: 40ch;
+	max-width: none;
 	line-height: 1.9;
+	text-align: justify;
 }
 
 .site-foot a {
@@ -1169,6 +1269,7 @@ body.has-hero .site-head[data-scrolled="true"] .site-nav a:hover {
 	line-height: 1.7;
 	letter-spacing: 0.02em;
 	color: rgba(255, 255, 255, 0.42);
+	text-align: justify;
 }
 
 .site-foot .fine {
@@ -1178,20 +1279,6 @@ body.has-hero .site-head[data-scrolled="true"] .site-nav a:hover {
 	font-size: 0.68rem;
 	letter-spacing: 0.08em;
 	color: rgba(255, 255, 255, 0.5);
-}
-
-.site-foot .site-foot__opencode {
-	font-size: 0.62rem;
-	letter-spacing: 0.04em;
-	color: rgba(255, 255, 255, 0.35);
-	text-align: center;
-	margin-top: 0.75rem;
-	line-height: 1.4;
-}
-
-.site-foot .site-foot__opencode a {
-	color: rgba(255, 255, 255, 0.5);
-	text-decoration: underline;
 }
 
 .site-foot__byline {
