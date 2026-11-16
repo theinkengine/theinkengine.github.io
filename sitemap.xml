@@ -20,7 +20,7 @@
 	</url>
 	<url>
 		<loc>https://theinkengine.art/blog/</loc>
-		<lastmod>2026-11-11</lastmod>
+		<lastmod>2026-11-15</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
 	</url>
@@ -45,6 +45,30 @@
 	<url>
 		<loc>https://theinkengine.art/blog/2026-11-11-grafito-primero.html</loc>
 		<lastmod>2026-11-11</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://theinkengine.art/blog/2026-11-15-cincuenta-y-tres-centimetros-de-silencio.html</loc>
+		<lastmod>2026-11-15</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://theinkengine.art/blog/2026-11-15-air-tug.html</loc>
+		<lastmod>2026-11-15</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://theinkengine.art/blog/2026-11-15-heavyweight.html</loc>
+		<lastmod>2026-11-15</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>https://theinkengine.art/blog/2026-11-15-clockwork-heart.html</loc>
+		<lastmod>2026-11-15</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.6</priority>
 	</url>

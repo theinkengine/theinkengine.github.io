@@ -1,5 +1,37 @@
 window.INK_BLOG = [
 	{
+		file: "2026-11-15-cincuenta-y-tres-centimetros-de-silencio.html",
+		date: "2026-11-15",
+		titleKey: "post_cincuenta_tres_title",
+		ledeKey: "post_cincuenta_tres_lede",
+		image: "../images/blog/cincuenta-tres-papel-960.jpg?v=20261115a",
+		imageAltKey: "post_cincuenta_tres_alt"
+	},
+	{
+		file: "2026-11-15-air-tug.html",
+		date: "2026-11-15",
+		titleKey: "series1_title",
+		ledeKey: "series1_lede",
+		image: "../images/pic01.jpg",
+		imageAltKey: "post_air_alt"
+	},
+	{
+		file: "2026-11-15-heavyweight.html",
+		date: "2026-11-15",
+		titleKey: "series2_title",
+		ledeKey: "series2_lede",
+		image: "../images/pic02.jpg",
+		imageAltKey: "post_heavy_alt"
+	},
+	{
+		file: "2026-11-15-clockwork-heart.html",
+		date: "2026-11-15",
+		titleKey: "series3_title",
+		ledeKey: "series3_lede",
+		image: "../images/pic03.jpg",
+		imageAltKey: "post_clock_alt"
+	},
+	{
 		file: "2026-11-11-grafito-primero.html",
 		date: "2026-11-11",
 		titleKey: "post_grafito_title",
