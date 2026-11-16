@@ -404,6 +404,7 @@
 						const subject = encodeURIComponent(dict.news_subject || "Carta del estudio — suscripción");
 						const body = encodeURIComponent((dict.news_body || "Por favor, añade a {email} a la lista de correo del estudio.").replace("{email}", email));
 						if (status) { status.textContent = dict.news_opening || "Abriendo tu aplicación de correo para completar la suscripción."; }
+						if (window.INK_ANALYTICS) { window.INK_ANALYTICS.formMailto("newsletter"); }
 						window.location.href = "mailto:theinkengine@gmail.com?subject=" + subject + "&body=" + body;
 						return;
 					}
@@ -428,9 +429,11 @@
 						const result = await response.json();
 						if (!result || !result.success) throw new Error((result && result.message) || "error");
 						if (status) { status.textContent = dict.news_success || "Listo. Tu correo llegó al estudio."; }
+						if (window.INK_ANALYTICS) { window.INK_ANALYTICS.subscribe(); }
 						form.reset();
 					} catch (error) {
 						if (status) { status.textContent = dict.news_error || "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com."; }
+						if (window.INK_ANALYTICS) { window.INK_ANALYTICS.formError("newsletter"); }
 					} finally {
 						if (submitBtn) submitBtn.disabled = false;
 					}
@@ -477,6 +480,7 @@
 					if (!key) {
 						if (contactStatus) contactStatus.textContent = d.book_mailto || (isEnglish ? "Opening your email app…" : "Abriendo tu aplicación de correo…");
 						const mailBody = name + " (" + email + ")\n\n" + message;
+						if (window.INK_ANALYTICS) { window.INK_ANALYTICS.formMailto("contact"); }
 						window.location.href = "mailto:theinkengine@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(mailBody);
 						return;
 					}
@@ -502,14 +506,17 @@
 						const result = await response.json();
 						if (!result || !result.success) throw new Error((result && result.message) || "error");
 						if (contactStatus) contactStatus.textContent = d.contact_form_success || (isEnglish ? "Done. Your message reached the studio." : "Listo. Tu mensaje llegó al estudio.");
+						if (window.INK_ANALYTICS) { window.INK_ANALYTICS.formSuccess("contact"); }
 						contactForm.reset();
 					} catch (error) {
 						if (contactStatus) contactStatus.textContent = d.contact_form_error || (isEnglish ? "Could not send. Please try again or email theinkengine@gmail.com." : "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com.");
+						if (window.INK_ANALYTICS) { window.INK_ANALYTICS.formError("contact"); }
 					} finally {
 						if (contactSubmit) contactSubmit.disabled = false;
 					}
 				});
 			}
 		</script>
-	</body>
+			<script src="assets/js/analytics.js?v=20261115a"></script>
+</body>
 </html>

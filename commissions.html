@@ -267,6 +267,9 @@
 						if (statusEl) {
 							statusEl.textContent = text("book_mailto", lang === "en" ? "Opening your email app…" : "Abriendo tu aplicación de correo…");
 						}
+						if (window.INK_ANALYTICS) {
+							window.INK_ANALYTICS.formMailto("commission");
+						}
 						window.location.href = "mailto:theinkengine@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\r\n"));
 						return;
 					}
@@ -304,9 +307,15 @@
 						if (statusEl) {
 							statusEl.textContent = text("book_success", lang === "en" ? "Done. Your message arrived; I'll reply to your email." : "Listo. Tu mensaje llegó; te respondo a tu correo.");
 						}
+						if (window.INK_ANALYTICS) {
+							window.INK_ANALYTICS.formSuccess("commission", { format: formatValue });
+						}
 					}).catch(function () {
 						if (statusEl) {
 							statusEl.textContent = text("book_error", lang === "en" ? "Could not send. Please try again or email theinkengine@gmail.com." : "No se pudo enviar. Probá de nuevo o escribime a theinkengine@gmail.com.");
+						}
+						if (window.INK_ANALYTICS) {
+							window.INK_ANALYTICS.formError("commission");
 						}
 					}).then(function () {
 						setBusy(false);
@@ -314,5 +323,6 @@
 				});
 			})();
 		</script>
-	</body>
+			<script src="assets/js/analytics.js?v=20261115a"></script>
+</body>
 </html>

@@ -545,6 +545,9 @@
 						var key = (window.INK_CONFIG || {}).web3formsKey;
 						if (!key) {
 							if (statusEl) statusEl.textContent = L.mailto;
+							if (window.INK_ANALYTICS) {
+								window.INK_ANALYTICS.formMailto("class_booking", { option: data.option });
+							}
 							var href = mailto(l, currentKey, data);
 							if (href) {
 								window.setTimeout(function () {
@@ -582,11 +585,17 @@
 									throw new Error((result && result.message) || "error");
 								}
 								if (statusEl) statusEl.textContent = L.success;
+								if (window.INK_ANALYTICS) {
+									window.INK_ANALYTICS.formSuccess("class_booking", { option: data.option });
+								}
 								form.reset();
 								window.setTimeout(closeDialog, 2000);
 							})
 							.catch(function () {
 								if (statusEl) statusEl.textContent = L.error;
+								if (window.INK_ANALYTICS) {
+									window.INK_ANALYTICS.formError("class_booking", { option: data.option });
+								}
 							})
 							.finally(function () {
 								if (submitBtn) submitBtn.disabled = false;
@@ -618,5 +627,6 @@
 				}
 			})();
 		</script>
-	</body>
+			<script src="assets/js/analytics.js?v=20261115a"></script>
+</body>
 </html>

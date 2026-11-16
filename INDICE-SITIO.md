@@ -1,7 +1,7 @@
 # The Ink Engine — índice operativo del sitio
 
 > Leer este archivo primero. Abrir después solo el archivo o la sección citada.
-> Última actualización: 2026-11-10 · Rama: `dev` · Bilingüe ES/EN, Diario (`blog/`) y Galería (`gallery.html`) funcionando en local y HTTP.
+> Última actualización: 2026-11-15 · Rama: `dev` · Bilingüe ES/EN, Diario (`blog/`), Galería (`gallery.html`) y About funcionando en local y HTTP.
 
 ## 1. Repo y estado
 
@@ -31,6 +31,20 @@
 - Entradas: HTML estático bilingüe con claves `post_<slug>_*` en el diccionario; una imagen, texto corto y `<blockquote class="blog-post__reflection">`.
 - CSS: `assets/css/blog.css` (portada, tarjetas, artículo y reflexión; reutiliza tokens de `site.css`).
 - Para publicar: crear `blog/AAAA-MM-DD-slug.html`, añadir sus claves a `translations.json`, regenerar `translations.js`, añadir la entrada a `blog.js`, al `sitemap.xml` y subir `?v=` de `blog.css`/`translations.js` si cambian.
+
+### 1.3 Destinos de material
+
+| Material | Dónde va |
+|---|---|
+| Entrada del Diario | `blog/AAAA-MM-DD-slug.html` + `assets/data/blog.js` + `sitemap.xml` |
+| Textos de entrada | `assets/data/translations.json` (`post_<slug>_*`) → regenerar `translations.js` |
+| Imágenes de entrada | `images/blog/<slug>-{480,960,1440}.{webp,jpg}` |
+| Derivados web de obra | `images/works/work-NN-{480,960,1440}.webp` + `-960.jpg` + `assets/js/works-data.js` |
+| Fotos crudas de obra | `G:\Mi unidad\Arte\Galería web` → `theinkengineimages` → `images/works` |
+| Portada de galería | `images/gallery/` |
+| Material para Instagram | `G:\Mi unidad\Arte\InstagramTheInkEngine\` (`AAAA-MM-DD-<tema>-<formato>.<ext>` + `.md`) |
+
+Regla completa en `AGENTS.md`.
 
 ## 2. Mapa de `index.html`
 

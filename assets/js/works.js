@@ -138,6 +138,13 @@
 	function open(index, opener) {
 		trigger = opener;
 		render(index);
+		if (window.INK_ANALYTICS) {
+			var work = works[current];
+			window.INK_ANALYTICS.track("gallery_open", {
+				work: pick(work.title, currentLang()),
+				work_index: current
+			});
+		}
 		if (typeof dialog.showModal === "function") { dialog.showModal(); }
 		else { dialog.setAttribute("open", ""); }
 	}
@@ -145,6 +152,12 @@
 	function openAcquisition(index, opener) {
 		var work = works[index];
 		if (!work) { return; }
+		if (window.INK_ANALYTICS) {
+			window.INK_ANALYTICS.track("gallery_inquire", {
+				work: pick(work.title, currentLang()),
+				work_index: index
+			});
+		}
 		document.dispatchEvent(new CustomEvent("ink:acquire", {
 			detail: { index: index, work: work, opener: opener }
 		}));

@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const card = document.createElement("a");
 			card.className = "blog-card";
 			card.href = entry.file;
+			card.setAttribute("data-ga-cta", "blog_card");
 			card.setAttribute("data-reveal", "");
 
 			const media = document.createElement("span");
@@ -48,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const title = document.createElement("h2");
 			title.setAttribute("data-i18n", entry.titleKey);
 			title.textContent = textFor(entry.titleKey);
+			card.setAttribute("data-ga-label", title.textContent);
 
 			const lede = document.createElement("span");
 			lede.className = "blog-card__lede";
