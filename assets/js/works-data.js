@@ -513,5 +513,33 @@ window.WORKS = [
       "en": "Paper with borders: 54.9 × 37.3 cm · 21.6 × 14.7 in"
     },
     "source": "1794368690652.jpg"
+  },
+  {
+    "id": "veleros-en-la-niebla",
+    "src": "images/works/veleros-en-la-niebla",
+    "w": 1440,
+    "h": 626,
+    "year": "2026",
+    "title": {
+      "es": "Veleros en la niebla",
+      "en": "Sailboats in the Fog"
+    },
+    "alt": {
+      "es": "Acuarela sobre papel: cuatro veleros en la niebla sobre agua oscura, con velas tenues en rojo, amarillo y azul.",
+      "en": "Watercolor on paper: four sailboats in the fog over dark water, with faint red, yellow and blue sails."
+    },
+    "medium": {
+      "es": "Acuarela clásica sobre papel Canson 140 lb",
+      "en": "Classic watercolor on Canson 140 lb paper"
+    },
+    "source": "1795387812038.jpg",
+    "dimensions": {
+      "es": "53 × 22,18 cm · 20,9 × 8,7 in",
+      "en": "53 × 22.18 cm · 20.9 × 8.7 in"
+    },
+    "paper": {
+      "es": "Papel con bordes: 55 × 24,18 cm · 21,7 × 9,5 in",
+      "en": "Paper with borders: 55 × 24.18 cm · 21.7 × 9.5 in"
+    }
   }
 ];

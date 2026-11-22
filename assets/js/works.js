@@ -2,7 +2,7 @@
 	"use strict";
 
 	var works = window.WORKS || [];
-	var ASSET_V = "20261112f";
+	var ASSET_V = "20261122a";
 	var grid = document.getElementById("works-grid");
 	var dialog = document.getElementById("works-lightbox");
 	var yearEl = document.getElementById("year");
