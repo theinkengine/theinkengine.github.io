@@ -1,5 +1,13 @@
 window.INK_BLOG = [
 	{
+		file: "2026-11-23-hierro-y-agua.html",
+		date: "2026-11-23",
+		titleKey: "post_hierro_title",
+		ledeKey: "post_hierro_lede",
+		image: "../images/blog/hierro-y-agua-01-960.jpg?v=20261123a",
+		imageAltKey: "post_hierro_alt"
+	},
+	{
 		file: "2026-11-23-barcos-que-esperan.html",
 		date: "2026-11-23",
 		titleKey: "post_barcos_title",
