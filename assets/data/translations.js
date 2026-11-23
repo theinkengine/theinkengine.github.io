@@ -569,7 +569,17 @@ window.INK_TRANSLATIONS = {
 		"post_barcos_alt": "Video de taller: obra extensa de barcos amarrados en el muelle, acuarela sobre papel.",
 		"post_barcos_caption": "Estudio · Barcos que esperan. Obra extensa sobre el muelle.",
 		"post_barcos_video_alt": "Corto de taller: obra extensa de barcos amarrados en el muelle, acuarela sobre papel.",
-		"post_barcos_video_caption": "Corto · Barcos que esperan. Un minuto de muelle."
+		"post_barcos_video_caption": "Corto · Barcos que esperan. Un minuto de muelle.",
+		"post_barcos_img1_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 1.",
+		"post_barcos_img1_caption": "Progresión · Etapa 1 de la obra extensa de barcos que esperan en el muelle.",
+		"post_barcos_img2_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 2.",
+		"post_barcos_img2_caption": "Progresión · Etapa 2 de la obra extensa de barcos que esperan en el muelle.",
+		"post_barcos_img3_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 3.",
+		"post_barcos_img3_caption": "Progresión · Etapa 3 de la obra extensa de barcos que esperan en el muelle.",
+		"post_barcos_img4_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 4.",
+		"post_barcos_img4_caption": "Progresión · Etapa 4 de la obra extensa de barcos que esperan en el muelle.",
+		"post_barcos_img5_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 5.",
+		"post_barcos_img5_caption": "Progresión · Etapa 5 de la obra extensa de barcos que esperan en el muelle."
 	},
 	"en": {
 		"nav_work": "Work",
@@ -1141,6 +1151,16 @@ window.INK_TRANSLATIONS = {
 		"post_barcos_alt": "Studio video: extensive watercolour of boats moored at the pier, on paper.",
 		"post_barcos_caption": "Study · Boats That Wait. Extensive work on the pier.",
 		"post_barcos_video_alt": "Studio short: extensive watercolour of boats moored at the pier, on paper.",
-		"post_barcos_video_caption": "Short · Boats That Wait. One minute of pier."
+		"post_barcos_video_caption": "Short · Boats That Wait. One minute of pier.",
+		"post_barcos_img1_alt": "Photograph of the extensive work of boats moored at the pier, stage 1.",
+		"post_barcos_img1_caption": "Progress · Stage 1 of the extensive work of boats that wait at the pier.",
+		"post_barcos_img2_alt": "Photograph of the extensive work of boats moored at the pier, stage 2.",
+		"post_barcos_img2_caption": "Progress · Stage 2 of the extensive work of boats that wait at the pier.",
+		"post_barcos_img3_alt": "Photograph of the extensive work of boats moored at the pier, stage 3.",
+		"post_barcos_img3_caption": "Progress · Stage 3 of the extensive work of boats that wait at the pier.",
+		"post_barcos_img4_alt": "Photograph of the extensive work of boats moored at the pier, stage 4.",
+		"post_barcos_img4_caption": "Progress · Stage 4 of the extensive work of boats that wait at the pier.",
+		"post_barcos_img5_alt": "Photograph of the extensive work of boats moored at the pier, stage 5.",
+		"post_barcos_img5_caption": "Progress · Stage 5 of the extensive work of boats that wait at the pier."
 	}
 };
