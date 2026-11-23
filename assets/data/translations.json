@@ -589,7 +589,12 @@
 		"post_hierro_img4_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 4.",
 		"post_hierro_img4_caption": "Progresión · Etapa 4 del trabajo de hierro y agua en el puerto.",
 		"post_hierro_img5_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 5.",
-		"post_hierro_img5_caption": "Progresión · Etapa 5 del trabajo de hierro y agua en el puerto."
+		"post_hierro_img5_caption": "Progresión · Etapa 5 del trabajo de hierro y agua en el puerto.",
+		"post_hierro_p7": "Muchas de estas obras nacen de mis visitas al puerto de Mar del Plata. Las escolleras, los cascos oxidados, el olor a sal y diesel: todo eso se filtra en el papel. La Escollera Norte y la Escollera Sur enmarcan el puerto como dos brazos de piedra; entre ellas, el mar se calma y los barcos respiran.",
+		"post_hierro_escolleras_title": "Las escolleras de Mar del Plata",
+		"post_hierro_escolleras_p1": "El puerto de Mar del Plata es artificial: se inauguró en 1924 y se encierra entre dos escolleras que lo protegen del Atlántico. La Escollera Sur mide 2.750 m y fue declarada Patrimonio Histórico Nacional; la Escollera Norte mide 1.050 m. Ambas se levantaron con piedra traída en tren desde las canteras de Los Pinos, en Balcarce, por una empresa francesa (Société Nationale de Travaux Publics de Marsella), la misma que hizo el puerto de Montevideo.",
+		"post_hierro_escolleras_p2": "Los trabajos empezaron en 1911 (Ley 6499, 1909). La grúa Titán montó la Escollera Sur; el arraigamiento de la Norte comenzó en diciembre de 1912. En 1922 se habilitaron los primeros sectores. Al final de la Escollera Sur se alza el San Salvador, patrono de los pescadores (obra de Emilio Manescau), que popularmente se llama «el Cristo». En la Norte atraque la Fragata Libertad y se encuentra el INIDEP.",
+		"post_hierro_escolleras_links": "<em>Fuentes: <a href=\"https://es.wikipedia.org/wiki/Puerto_de_Mar_del_Plata\" target=\"_blank\" rel=\"noopener\">Wikipedia — Puerto de Mar del Plata</a>; <a href=\"https://www.mardelplata.com/puerto/historia\" target=\"_blank\" rel=\"noopener\">Historia del puerto — Mardelplata.com</a>; <a href=\"https://mardelplata.italiani.it/historia-de-las-escolleras-de-mar-del-plata\" target=\"_blank\" rel=\"noopener\">Historia de las escolleras — itMarDelPlata</a>; <a href=\"https://www.infocielo.com/municipios/las-legendarias-escolleras-mar-del-plata-el-aire-n731026\" target=\"_blank\" rel=\"noopener\">Las legendarias escolleras — Infocielo</a>.</em>"
 	},
 	"en": {
 		"nav_work": "Work",
@@ -1181,6 +1186,11 @@
 		"post_hierro_img4_alt": "Photograph of the iron and water work at the harbour, stage 4.",
 		"post_hierro_img4_caption": "Progress · Stage 4 of the iron and water work at the harbour.",
 		"post_hierro_img5_alt": "Photograph of the iron and water work at the harbour, stage 5.",
-		"post_hierro_img5_caption": "Progress · Stage 5 of the iron and water work at the harbour."
+		"post_hierro_img5_caption": "Progress · Stage 5 of the iron and water work at the harbour.",
+		"post_hierro_p7": "Many of these works are born from my visits to the port of Mar del Plata. The breakwaters, the rusted hulls, the smell of salt and diesel: all of that seeps into the paper. The North and South Breakwaters frame the harbour like two arms of stone; between them, the sea calms and the boats breathe.",
+		"post_hierro_escolleras_title": "The breakwaters of Mar del Plata",
+		"post_hierro_escolleras_p1": "The port of Mar del Plata is artificial: it opened in 1924 and is enclosed by two breakwaters that protect it from the Atlantic. The South Breakwater is 2,750 m long and was declared a National Historic Monument; the North Breakwater is 1,050 m. Both were built with stone brought by train from the Los Pinos quarries in Balcarce, by a French company (Société Nationale de Travaux Publics de Marsella), the same one that built the port of Montevideo.",
+		"post_hierro_escolleras_p2": "Work began in 1911 (Law 6499, 1909). The Titan crane erected the South Breakwater; the North was founded in December 1912. The first sectors opened in 1922. At the end of the South Breakwater stands San Salvador, patron saint of fishermen (work by Emilio Manescau), popularly called «the Christ». On the North, the Fragata Libertad docks and INIDEP is located.",
+		"post_hierro_escolleras_links": "<em>Sources: <a href=\"https://es.wikipedia.org/wiki/Puerto_de_Mar_del_Plata\" target=\"_blank\" rel=\"noopener\">Wikipedia — Port of Mar del Plata</a>; <a href=\"https://www.mardelplata.com/puerto/historia\" target=\"_blank\" rel=\"noopener\">History of the port — Mardelplata.com</a>; <a href=\"https://mardelplata.italiani.it/historia-de-las-escolleras-de-mar-del-plata\" target=\"_blank\" rel=\"noopener\">History of the breakwaters — itMarDelPlata</a>; <a href=\"https://www.infocielo.com/municipios/las-legendarias-escolleras-mar-del-plata-el-aire-n731026\" target=\"_blank\" rel=\"noopener\">The legendary breakwaters — Infocielo</a>.</em>"
 	}
 }
