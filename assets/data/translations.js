@@ -600,7 +600,10 @@ window.INK_TRANSLATIONS = {
 		"post_hierro_between3": "El puerto se arma capa por capa. Cada lavado deja ver lo que había debajo.",
 		"post_barcos_between1": "La proa primero. El resto del barco le sigue, como quien sigue un pensamiento.",
 		"post_barcos_between2": "Las amarras tensan. El muelle sostiene la línea.",
-		"post_barcos_between3": "La obra se alarga. Cada barco pide su espacio, su sombra, su silencio."
+		"post_barcos_between3": "La obra se alarga. Cada barco pide su espacio, su sombra, su silencio.",
+		"post_barcos_titan_title": "La grúa Titán",
+		"post_barcos_titan_p1": "La grúa Titán fue la máquina que montó las escolleras. Hubo dos: la Titán-Sur (montada en 1912, perfil mínimo de observación) y la Titán-Norte. Pesaban diez toneladas según Wikipedia, cincuenta según el folleto educativo del puerto. Colocaban bloques de piedra de treinta a cuarenta toneladas traídos desde las canteras de Los Pinos, en Balcarce; cada bloque era acompañado en el descenso por un buzo. Su silueta aparece en las fotos viejas del puerto, entre vagones y bloques de cemento. En 1953, los trabajadores de Obras Públicas la desmantelaron. Hoy es parte de la memoria del lugar.",
+		"post_barcos_titan_links": "<em>Fuentes: <a href=\"https://es.wikipedia.org/wiki/Puerto_de_Mar_del_Plata\" target=\"_blank\" rel=\"noopener\">Wikipedia — Puerto de Mar del Plata</a>; <a href=\"https://www.infobae.com/tendencias/2025/01/25/el-cristo-del-puerto-de-mar-del-plata-historia-y-el-plan-de-la-nieta-de-su-creador-para-restaurarlo\" target=\"_blank\" rel=\"noopener\">Infobae — El «Cristo» del puerto</a>.</em>"
 	},
 	"en": {
 		"nav_work": "Work",
@@ -1203,6 +1206,9 @@ window.INK_TRANSLATIONS = {
 		"post_hierro_between3": "The harbour is built layer by layer. Each wash lets you see what was underneath.",
 		"post_barcos_between1": "The bow first. The rest of the boat follows, like someone following a thought.",
 		"post_barcos_between2": "The moorings tighten. The pier holds the line.",
-		"post_barcos_between3": "The work lengthens. Each boat asks for its space, its shadow, its silence."
+		"post_barcos_between3": "The work lengthens. Each boat asks for its space, its shadow, its silence.",
+		"post_barcos_titan_title": "The Titan crane",
+		"post_barcos_titan_p1": "The Titan crane was the machine that erected the breakwaters. There were two: Titan-South (mounted in 1912, minimum observation profile) and Titan-North. Ten tons according to Wikipedia, fifty according to the port educational brochure. They placed stone blocks of thirty to forty tons brought from the Los Pinos quarries in Balcarce; each block was accompanied on its descent by a diver. Its silhouette appears in old photographs of the port, among wagons and concrete blocks. In 1953, Public Works workers dismantled it. Today it is part of the memory of the place.",
+		"post_barcos_titan_links": "<em>Sources: <a href=\"https://es.wikipedia.org/wiki/Puerto_de_Mar_del_Plata\" target=\"_blank\" rel=\"noopener\">Wikipedia — Port of Mar del Plata</a>; <a href=\"https://www.infobae.com/tendencias/2025/01/25/el-cristo-del-puerto-de-mar-del-plata-historia-y-el-plan-de-la-nieta-de-su-creador-para-restaurarlo\" target=\"_blank\" rel=\"noopener\">Infobae — The «Christ» of the port</a>.</em>"
 	}
 };
