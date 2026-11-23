@@ -579,7 +579,17 @@
 		"post_barcos_img4_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 4.",
 		"post_barcos_img4_caption": "Progresión · Etapa 4 de la obra extensa de barcos que esperan en el muelle.",
 		"post_barcos_img5_alt": "Fotografía de la obra extensa de barcos amarrados en el muelle, etapa 5.",
-		"post_barcos_img5_caption": "Progresión · Etapa 5 de la obra extensa de barcos que esperan en el muelle."
+		"post_barcos_img5_caption": "Progresión · Etapa 5 de la obra extensa de barcos que esperan en el muelle.",
+		"post_hierro_img1_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 1.",
+		"post_hierro_img1_caption": "Progresión · Etapa 1 del trabajo de hierro y agua en el puerto.",
+		"post_hierro_img2_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 2.",
+		"post_hierro_img2_caption": "Progresión · Etapa 2 del trabajo de hierro y agua en el puerto.",
+		"post_hierro_img3_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 3.",
+		"post_hierro_img3_caption": "Progresión · Etapa 3 del trabajo de hierro y agua en el puerto.",
+		"post_hierro_img4_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 4.",
+		"post_hierro_img4_caption": "Progresión · Etapa 4 del trabajo de hierro y agua en el puerto.",
+		"post_hierro_img5_alt": "Fotografía del trabajo de hierro y agua en el puerto, etapa 5.",
+		"post_hierro_img5_caption": "Progresión · Etapa 5 del trabajo de hierro y agua en el puerto."
 	},
 	"en": {
 		"nav_work": "Work",
@@ -1161,6 +1171,16 @@
 		"post_barcos_img4_alt": "Photograph of the extensive work of boats moored at the pier, stage 4.",
 		"post_barcos_img4_caption": "Progress · Stage 4 of the extensive work of boats that wait at the pier.",
 		"post_barcos_img5_alt": "Photograph of the extensive work of boats moored at the pier, stage 5.",
-		"post_barcos_img5_caption": "Progress · Stage 5 of the extensive work of boats that wait at the pier."
+		"post_barcos_img5_caption": "Progress · Stage 5 of the extensive work of boats that wait at the pier.",
+		"post_hierro_img1_alt": "Photograph of the iron and water work at the harbour, stage 1.",
+		"post_hierro_img1_caption": "Progress · Stage 1 of the iron and water work at the harbour.",
+		"post_hierro_img2_alt": "Photograph of the iron and water work at the harbour, stage 2.",
+		"post_hierro_img2_caption": "Progress · Stage 2 of the iron and water work at the harbour.",
+		"post_hierro_img3_alt": "Photograph of the iron and water work at the harbour, stage 3.",
+		"post_hierro_img3_caption": "Progress · Stage 3 of the iron and water work at the harbour.",
+		"post_hierro_img4_alt": "Photograph of the iron and water work at the harbour, stage 4.",
+		"post_hierro_img4_caption": "Progress · Stage 4 of the iron and water work at the harbour.",
+		"post_hierro_img5_alt": "Photograph of the iron and water work at the harbour, stage 5.",
+		"post_hierro_img5_caption": "Progress · Stage 5 of the iron and water work at the harbour."
 	}
 }
