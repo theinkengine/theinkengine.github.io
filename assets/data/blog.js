@@ -1,5 +1,13 @@
 window.INK_BLOG = [
 	{
+		file: "2026-11-23-barcos-que-esperan.html",
+		date: "2026-11-23",
+		titleKey: "post_barcos_title",
+		ledeKey: "post_barcos_lede",
+		image: "../images/blog/barcos-que-esperan-05-960.jpg?v=20261123a",
+		imageAltKey: "post_barcos_alt"
+	},
+	{
 		file: "2026-11-15-cincuenta-y-tres-centimetros-de-silencio.html",
 		date: "2026-11-15",
 		titleKey: "post_cincuenta_tres_title",
