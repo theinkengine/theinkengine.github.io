@@ -615,27 +615,5 @@ window.WORKS = [
       "en": "Paper with borders: 55 × 24.18 cm · 21.7 × 9.5 in"
     }
   }
-  ,{
-    "id": "puerto",
-    "status": "disponible",
-    "technique": "acuarela",
-    "subject": "marina",
-    "src": "images/works/puerto",
-    "w": 1440,
-    "h": 299,
-    "year": "2026",
-    "title": {
-      "es": "Puerto",
-      "en": "Harbour"
-    },
-    "alt": {
-      "es": "Marina en acuarela sobre papel: vista amplia del puerto.",
-      "en": "Watercolour seascape on paper: wide view of the harbour."
-    },
-    "medium": {
-      "es": "Acuarela clásica sobre papel 140 lb",
-      "en": "Classic watercolor on 140 lb paper"
-    },
-    "source": "1795467041067.jpg"
-  }
+
 ];
