@@ -18,7 +18,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" />
 		<link rel="stylesheet" href="assets/css/site.css?v=20261114a" />
-		<link rel="stylesheet" href="assets/css/gallery.css?v=20261123d" />
+		<link rel="stylesheet" href="assets/css/gallery.css?v=20261123e" />
 		<link rel="stylesheet" href="assets/css/lang.css?v=20261103a" />
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YV3L4K3BGD"></script>
@@ -73,6 +73,21 @@
 						<p class="eyebrow" data-i18n="gallery_index_eyebrow">Obra</p>
 						<h2 id="gallery-works-title" data-i18n="gallery_subtitle">Estudios sobre papel</h2>
 						<p data-i18n="gallery_index_note">Piezas únicas. Técnica y medidas exactas en cada ficha.</p>
+					</div>
+					<div class="works-filters" role="group" aria-label="Filtros">
+						<button type="button" class="works-filter is-active" data-filter="all" data-i18n="filter_all">Todos</button>
+						<button type="button" class="works-filter" data-filter="status" data-value="disponible" data-i18n="filter_disponible">Disponible</button>
+						<button type="button" class="works-filter" data-filter="status" data-value="reservado" data-i18n="filter_reservado">Reservado</button>
+						<button type="button" class="works-filter" data-filter="status" data-value="vendido" data-i18n="filter_vendido">Vendido</button>
+						<button type="button" class="works-filter" data-filter="technique" data-value="acuarela" data-i18n="filter_acuarela">Acuarela</button>
+						<button type="button" class="works-filter" data-filter="technique" data-value="oleo" data-i18n="filter_oleo">Óleo</button>
+						<button type="button" class="works-filter" data-filter="technique" data-value="pastel" data-i18n="filter_pastel">Pastel</button>
+						<button type="button" class="works-filter" data-filter="technique" data-value="digital" data-i18n="filter_digital">Digital</button>
+						<button type="button" class="works-filter" data-filter="technique" data-value="mixta" data-i18n="filter_mixta">Mixta</button>
+						<button type="button" class="works-filter" data-filter="subject" data-value="marina" data-i18n="filter_marina">Marina</button>
+						<button type="button" class="works-filter" data-filter="subject" data-value="maquinaria" data-i18n="filter_maquinaria">Maquinaria</button>
+						<button type="button" class="works-filter" data-filter="subject" data-value="botanica" data-i18n="filter_botanica">Botánica</button>
+						<button type="button" class="works-filter" data-filter="subject" data-value="otro" data-i18n="filter_otro">Otro</button>
 					</div>
 					<div id="works-grid" class="works-grid"></div>
 					<p class="gallery-note" data-i18n="gallery_more_photos">¿Querés verla mejor antes de decidir? Escribime y te mando más fotos de la obra que te interesa: detalles de cerca, el reverso, otra luz o una toma nueva. Quiero que la veas bien y que elijas con seguridad.</p>
@@ -155,10 +170,10 @@
 
 		<script src="assets/js/site-config.js?v=20261109b"></script>
 		<script src="assets/js/form-utils.js?v=20261111a"></script>
-		<script src="assets/data/translations.js?v=20261123g"></script>
+		<script src="assets/data/translations.js?v=20261123h"></script>
 		<script src="assets/js/lang.js?v=20261103a"></script>
-		<script src="assets/js/works-data.js?v=20261123e"></script>
-		<script src="assets/js/works.js?v=20261123d"></script>
+		<script src="assets/js/works-data.js?v=20261123f"></script>
+		<script src="assets/js/works.js?v=20261123f"></script>
 
 		<script type="module">
 			const head = document.querySelector(".site-head");

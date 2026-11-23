@@ -173,3 +173,45 @@
 	text-transform: none;
 	color: rgba(255, 255, 255, 0.6);
 }
+
+/* Filtros de galería */
+.works-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.works-filters .works-filter {
+	margin: 0;
+	padding: 0.3rem 0.7rem;
+	border: 1px solid var(--hair);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--ink-soft);
+	font-family: var(--font-body);
+	font-size: 0.6rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.works-filters .works-filter.is-active {
+	border-color: var(--gold-text);
+	color: var(--gold-text);
+	background: rgba(181, 138, 78, 0.08);
+}
+
+.works-filters .works-filter:hover {
+	color: var(--ink);
+	border-color: var(--ink);
+}
+
+.works-empty {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 2rem 0;
+	color: var(--ink-soft);
+	font-size: 0.85rem;
+}

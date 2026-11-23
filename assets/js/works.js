@@ -2,7 +2,7 @@
 	"use strict";
 
 	var works = window.WORKS || [];
-	var ASSET_V = "20261123d";
+	var ASSET_V = "20261123f";
 	var grid = document.getElementById("works-grid");
 	var dialog = document.getElementById("works-lightbox");
 	var yearEl = document.getElementById("year");
@@ -57,6 +57,30 @@
 	};
 
 	var CLOSED_STATUSES = { reservado: true, vendido: true };
+	var filters = { status: "", technique: "", subject: "" };
+
+	function filteredIndices() {
+		var result = [];
+		works.forEach(function (work, i) {
+			if (filters.status && work.status !== filters.status) { return; }
+			if (filters.technique && work.technique !== filters.technique) { return; }
+			if (filters.subject && work.subject !== filters.subject) { return; }
+			result.push(i);
+		});
+		return result;
+	}
+
+	function updateFilterButtons() {
+		var allActive = !filters.status && !filters.technique && !filters.subject;
+		document.querySelectorAll(".works-filter").forEach(function (btn) {
+			var ft = btn.dataset.filter;
+			var val = btn.dataset.value || "";
+			var active = false;
+			if (ft === "all") { active = allActive; }
+			else { active = filters[ft] === val; }
+			btn.classList.toggle("is-active", active);
+		});
+	}
 
 	function asset(url) { return url + "?v=" + ASSET_V; }
 
@@ -103,7 +127,11 @@
 	function buildGrid() {
 		var lang = currentLang();
 		grid.innerHTML = "";
-		works.forEach(function (work, index) {
+		var indices = filteredIndices();
+		if (indices.length === 1) { grid.classList.add("works-grid--single"); }
+		else { grid.classList.remove("works-grid--single"); }
+		indices.forEach(function (index, i) {
+			var work = works[index];
 			var figure = document.createElement("figure");
 			var link = document.createElement("a");
 			var picture = document.createElement("picture");
@@ -120,15 +148,15 @@
 
 			source.type = "image/webp";
 			source.srcset = srcset(work.src);
-			source.sizes = works.length === 1 ? "(max-width: 759px) 100vw, 960px" : "(max-width: 759px) 100vw, 47vw";
+			source.sizes = indices.length === 1 ? "(max-width: 759px) 100vw, 960px" : "(max-width: 759px) 100vw, 47vw";
 
 			image.src = asset(work.src + "-960.jpg");
 			image.alt = pick(work.alt, lang);
 			image.width = work.w;
 			image.height = work.h;
-			image.loading = index === 0 ? "eager" : "lazy";
+			image.loading = i === 0 ? "eager" : "lazy";
 			image.decoding = "async";
-			if (index === 0) { image.fetchPriority = "high"; }
+			if (i === 0) { image.fetchPriority = "high"; }
 
 			num.className = "num";
 			num.textContent = pad(index + 1);
@@ -175,6 +203,12 @@
 			figure.appendChild(cap);
 			grid.appendChild(figure);
 		});
+		if (indices.length === 0) {
+			var empty = document.createElement("p");
+			empty.className = "works-empty";
+			empty.textContent = dict("filter_empty", lang === "en" ? "No works match these filters." : "No hay obras con estos filtros.");
+			grid.appendChild(empty);
+		}
 	}
 
 	function render(index) {
@@ -260,6 +294,26 @@
 	});
 
 	var lastLang = currentLang();
+	var filterBar = document.querySelector(".works-filters");
+	if (filterBar) {
+		filterBar.addEventListener("click", function (event) {
+			var btn = event.target.closest("button.works-filter");
+			if (!btn) { return; }
+			var type = btn.dataset.filter;
+			var value = btn.dataset.value || "";
+			if (type === "all") {
+				filters.status = "";
+				filters.technique = "";
+				filters.subject = "";
+			} else {
+				if (filters[type] === value) { filters[type] = ""; }
+				else { filters[type] = value; }
+			}
+			updateFilterButtons();
+			buildGrid();
+		});
+	}
+	updateFilterButtons();
 	buildGrid();
 
 	new MutationObserver(function () {
