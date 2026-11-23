@@ -35,7 +35,57 @@
 		return value || fallback;
 	}
 
+	var TAG_LABELS = {
+		status: {
+			disponible: { es: "Disponible", en: "Available" },
+			reservado: { es: "Reservado", en: "Reserved" },
+			vendido: { es: "Vendido", en: "Sold" }
+		},
+		technique: {
+			acuarela: { es: "Acuarela", en: "Watercolor" },
+			oleo: { es: "Óleo", en: "Oil" },
+			pastel: { es: "Pastel", en: "Pastel" },
+			digital: { es: "Digital", en: "Digital" },
+			mixta: { es: "Mixta", en: "Mixed media" }
+		},
+		subject: {
+			marina: { es: "Marina", en: "Seascape" },
+			maquinaria: { es: "Maquinaria", en: "Machinery" },
+			botanica: { es: "Botánica", en: "Botanical" },
+			otro: { es: "Otro", en: "Other" }
+		}
+	};
+
+	var CLOSED_STATUSES = { reservado: true, vendido: true };
+
 	function asset(url) { return url + "?v=" + ASSET_V; }
+
+	function tagLabel(category, value, lang) {
+		if (!value) { return ""; }
+		var key = "tag_" + category + "_" + value;
+		var fromDict = (window.INK_CURRENT_DICT || {})[key];
+		if (fromDict) { return fromDict; }
+		var labels = TAG_LABELS[category] && TAG_LABELS[category][value];
+		return labels ? (labels[lang] || labels.es) : value;
+	}
+
+	function buildTags(work, lang) {
+		var wrap = document.createElement("span");
+		wrap.className = "work-tags";
+		[
+			["status", work.status],
+			["technique", work.technique],
+			["subject", work.subject]
+		].forEach(function (pair) {
+			var value = pair[1];
+			if (!value) { return; }
+			var tag = document.createElement("span");
+			tag.className = "work-tag work-tag--" + pair[0] + " work-tag--" + value;
+			tag.textContent = tagLabel(pair[0], value, lang);
+			wrap.appendChild(tag);
+		});
+		return wrap.childNodes.length ? wrap : null;
+	}
 
 	function srcset(base) {
 		return asset(base + "-480.webp") + " 480w, " + asset(base + "-960.webp") + " 960w, " + asset(base + "-1440.webp") + " 1440w";
@@ -108,6 +158,14 @@
 			acquire.dataset.index = String(index);
 			acquire.setAttribute("aria-haspopup", "dialog");
 			acquire.textContent = dict("gallery_cta", lang === "en" ? "Ask about price" : "Consultar precio");
+			if (CLOSED_STATUSES[work.status]) {
+				acquire.disabled = true;
+				acquire.classList.add("work-acquire--closed");
+				acquire.setAttribute("aria-disabled", "true");
+				acquire.title = tagLabel("status", work.status, lang);
+			}
+			var tagList = buildTags(work, lang);
+			if (tagList) { cap.appendChild(tagList); }
 			cap.appendChild(acquire);
 
 			picture.appendChild(source);
@@ -132,6 +190,14 @@
 		meta.className = "meta";
 		meta.textContent = detailsFor(work, lang, true);
 		caption.appendChild(meta);
+		var tagList = buildTags(work, lang);
+		if (tagList) { caption.appendChild(tagList); }
+		if (work.note) {
+			var note = document.createElement("span");
+			note.className = "work-note";
+			note.textContent = pick(work.note, lang);
+			caption.appendChild(note);
+		}
 		counter.textContent = pad(current + 1) + " / " + pad(works.length);
 	}
 

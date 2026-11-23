@@ -1,6 +1,9 @@
 window.WORKS = [
   {
     "id": "01",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/01",
     "w": 1007,
     "h": 1440,
@@ -24,6 +27,9 @@ window.WORKS = [
   },
   {
     "id": "02",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/02",
     "w": 1440,
     "h": 674,
@@ -47,6 +53,9 @@ window.WORKS = [
   },
   {
     "id": "03",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/03",
     "w": 1440,
     "h": 674,
@@ -70,6 +79,9 @@ window.WORKS = [
   },
   {
     "id": "04",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/04",
     "w": 1032,
     "h": 1440,
@@ -93,6 +105,9 @@ window.WORKS = [
   },
   {
     "id": "05",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/05",
     "w": 1440,
     "h": 300,
@@ -116,6 +131,9 @@ window.WORKS = [
   },
   {
     "id": "06",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/06",
     "w": 1014,
     "h": 1440,
@@ -139,6 +157,9 @@ window.WORKS = [
   },
   {
     "id": "07",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/07",
     "w": 1014,
     "h": 1440,
@@ -162,6 +183,9 @@ window.WORKS = [
   },
   {
     "id": "08",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/08",
     "w": 1024,
     "h": 1440,
@@ -185,6 +209,9 @@ window.WORKS = [
   },
   {
     "id": "09",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/09",
     "w": 810,
     "h": 1440,
@@ -208,6 +235,9 @@ window.WORKS = [
   },
   {
     "id": "10",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/10",
     "w": 978,
     "h": 1440,
@@ -231,6 +261,9 @@ window.WORKS = [
   },
   {
     "id": "11",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/11",
     "w": 972,
     "h": 1440,
@@ -254,6 +287,9 @@ window.WORKS = [
   },
   {
     "id": "12",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/12",
     "w": 997,
     "h": 1440,
@@ -277,6 +313,9 @@ window.WORKS = [
   },
   {
     "id": "13",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/13",
     "w": 1031,
     "h": 1440,
@@ -300,6 +339,9 @@ window.WORKS = [
   },
   {
     "id": "14",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/14",
     "w": 1023,
     "h": 1440,
@@ -323,6 +365,9 @@ window.WORKS = [
   },
   {
     "id": "15",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/15",
     "w": 1021,
     "h": 1440,
@@ -346,6 +391,9 @@ window.WORKS = [
   },
   {
     "id": "16",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/16",
     "w": 1024,
     "h": 1440,
@@ -369,6 +417,9 @@ window.WORKS = [
   },
   {
     "id": "17",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/17",
     "w": 1031,
     "h": 1440,
@@ -392,6 +443,9 @@ window.WORKS = [
   },
   {
     "id": "18",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/18",
     "w": 989,
     "h": 1440,
@@ -415,6 +469,9 @@ window.WORKS = [
   },
   {
     "id": "19",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/19",
     "w": 997,
     "h": 1440,
@@ -438,6 +495,9 @@ window.WORKS = [
   },
   {
     "id": "20",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "maquinaria",
     "src": "images/works/20",
     "w": 1002,
     "h": 1440,
@@ -461,6 +521,9 @@ window.WORKS = [
   },
   {
     "id": "faro",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/faro",
     "w": 1440,
     "h": 638,
@@ -489,6 +552,9 @@ window.WORKS = [
   },
   {
     "id": "saliendo-a-pescar",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/saliendo-a-pescar",
     "w": 1440,
     "h": 940,
@@ -516,9 +582,12 @@ window.WORKS = [
   },
   {
     "id": "veleros-en-la-niebla",
+    "status": "disponible",
+    "technique": "acuarela",
+    "subject": "marina",
     "src": "images/works/veleros-en-la-niebla",
     "w": 1440,
-    "h": 626,
+    "h": 606,
     "year": "2026",
     "title": {
       "es": "Veleros en la niebla",
@@ -528,11 +597,15 @@ window.WORKS = [
       "es": "Acuarela sobre papel: cuatro veleros en la niebla sobre agua oscura, con velas tenues en rojo, amarillo y azul.",
       "en": "Watercolor on paper: four sailboats in the fog over dark water, with faint red, yellow and blue sails."
     },
+    "note": {
+      "es": "Basada en una fotografía de una regata tomada desde la Escollera Norte de Mar del Plata el 15 de noviembre de 2026.",
+      "en": "Based on a photograph of a regatta taken from the North Breakwater of Mar del Plata on November 15, 2026."
+    },
     "medium": {
       "es": "Acuarela clásica sobre papel Canson 140 lb",
       "en": "Classic watercolor on Canson 140 lb paper"
     },
-    "source": "1795387812038.jpg",
+    "source": "1795463077457.jpg",
     "dimensions": {
       "es": "53 × 22,18 cm · 20,9 × 8,7 in",
       "en": "53 × 22.18 cm · 20.9 × 8.7 in"

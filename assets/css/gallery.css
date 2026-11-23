@@ -103,3 +103,73 @@
 	color: var(--ink);
 	border-bottom-color: var(--ink);
 }
+
+.works-grid .work-acquire--closed,
+.works-grid .work-acquire--closed:hover,
+.works-grid .work-acquire--closed:focus-visible {
+	border-bottom-color: var(--hair);
+	color: var(--ink-soft);
+	opacity: 0.55;
+	cursor: default;
+}
+
+/* Tags: disponibilidad · técnica · tipo */
+
+.work-tags {
+	flex-basis: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-top: 0.2rem;
+}
+
+.work-tags .work-tag {
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	padding: 0.22rem 0.55rem 0.18rem;
+	border: 1px solid var(--hair);
+	border-radius: 999px;
+	background: transparent;
+	color: var(--ink-soft);
+	font-family: var(--font-body);
+	font-size: 0.56rem;
+	font-weight: 400;
+	letter-spacing: 0.16em;
+	line-height: 1.4;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.work-tags .work-tag--disponible {
+	border-color: var(--gold-text);
+	color: var(--gold-text);
+}
+
+.works-lightbox .work-tags {
+	display: flex;
+	justify-content: center;
+	margin-top: 0.9rem;
+}
+
+.works-lightbox .work-tags .work-tag {
+	border-color: rgba(255, 255, 255, 0.26);
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.works-lightbox .work-tags .work-tag--disponible {
+	border-color: var(--gold);
+	color: var(--gold);
+}
+
+.works-lightbox figcaption .work-note {
+	display: block;
+	max-width: 62ch;
+	margin: 0.7rem auto 0;
+	font-family: var(--font-body);
+	font-size: 0.72rem;
+	line-height: 1.55;
+	letter-spacing: 0.02em;
+	text-transform: none;
+	color: rgba(255, 255, 255, 0.6);
+}
